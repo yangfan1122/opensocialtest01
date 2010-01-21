@@ -11,7 +11,7 @@ function atoj(str){
 }
 
 function jtoaHandler(){
-	alert("jtoaHandler");
+	alert("thisMovie('swfId') = "+thisMovie("swfId"));
 	document.getElementById("test").innerHTML = "a <- j";
 	thisMovie("swfId").jtoa();
 }
