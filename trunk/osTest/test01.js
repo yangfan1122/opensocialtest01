@@ -1,5 +1,18 @@
-function init() {
-	document.getElementById("main").innerHTML = "啥都还没有";
+function thisMovie(movieName) {
+	if (navigator.appName.indexOf("Microsoft") != -1) {
+             return window[movieName];
+    } else {
+             return document[movieName];
+    }
 }
-gadgets.util.registerOnLoadHandler(init);
+
+function atoj(str){
+	document.getElementById("test").innerHTML += str + "<br>";
+}
+
+function jtoa(){
+	thisMovie("swfId").jtoa();
+	document.getElementById("test").innerHTML = "";
+}
+
 

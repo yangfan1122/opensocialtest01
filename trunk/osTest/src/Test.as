@@ -1,6 +1,7 @@
 ﻿package
 {
     import flash.display.Sprite;
+	import flash.events.MouseEvent;
     import flash.external.ExternalInterface;
     import flash.text.TextField;
     /**
@@ -11,12 +12,20 @@
     {
         public function Test():void
         {
-            ExternalInterface.addCallback("jtoa" , jtoa);
+			btn.label = "a to j";
+			btn.addEventListener(MouseEvent.CLICK, btnHandler);
+			ExternalInterface.addCallback("jtoa" , jtoa);
         }
-        private function jtoa():void
-        {
-            txt.text = "j - a";
+		private function btnHandler(event:MouseEvent):void
+		{
             ExternalInterface.call("atoj" , "a - j");
-        }
+			txt.text = "";
+		}
+		private function jtoa():void
+		{
+			txt.text = "a <- j";
+		}
+		
+		
     }
 }
