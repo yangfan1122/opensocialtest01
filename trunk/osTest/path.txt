@@ -1,5 +1,7 @@
 http://opensocialtest01.googlecode.com/svn/trunk/osTest/test01.xml
 
+http://opensocialtest01.googlecode.com/svn/trunk/osTest/test01.js
+
 http://opensocialtest01.googlecode.com/svn/trunk/osTest/swfobject.js
 
 http://opensocialtest01.googlecode.com/svn/trunk/osTest/src/test.swf
