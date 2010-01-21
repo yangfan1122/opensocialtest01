@@ -4,6 +4,8 @@
 	import flash.events.MouseEvent;
     import flash.external.ExternalInterface;
     import flash.text.TextField;
+	import flash.system.Security;
+	
     /**
     * ...
     * @author yf
@@ -12,6 +14,9 @@
     {
         public function Test():void
         {
+			Security.allowDomain("*");
+			Security.allowInsecureDomain("*");
+			
 			btn.label = "a to j";
 			btn.addEventListener(MouseEvent.CLICK, btnHandler);
 			ExternalInterface.addCallback("jtoa" , jtoa);
