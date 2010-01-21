@@ -7,10 +7,11 @@ function thisMovie(movieName) {
 }
 
 function atoj(str){
-	document.getElementById("test").innerHTML += str + "<br>";
+	document.getElementById("test").innerHTML = str;
 }
 
 function jtoaHandler(){
+	alert("jtoaHandler");
 	thisMovie("swfId").jtoa();
 	document.getElementById("test").innerHTML = "a <- j";
 }
