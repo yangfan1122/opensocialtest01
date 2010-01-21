@@ -1,0 +1,1 @@
+http://opensocialtest01.googlecode.com/svn/trunk/osTest/test01.xml
