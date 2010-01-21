@@ -18,8 +18,8 @@
         }
 		private function btnHandler(event:MouseEvent):void
 		{
-            ExternalInterface.call("atoj" , "a - j");
-			txt.text = "";
+            ExternalInterface.call("atoj" , "a -> j");
+			txt.text = "a -> j";
 		}
 		private function jtoa():void
 		{

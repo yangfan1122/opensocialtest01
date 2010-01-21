@@ -15,8 +15,8 @@
 	f.write("swf");
 </script>
 
-<input type="button" value="j to a" onclick="" />
-<div id='test'>test, here~</div>
+<input type="button" value="j to a" onclick="jtoaHandler()" />
+<div id='test'>output, here~</div>
 <script src="http://opensocialtest01.googlecode.com/svn/trunk/osTest/test01.xml" language="javascript"></script>
 
 

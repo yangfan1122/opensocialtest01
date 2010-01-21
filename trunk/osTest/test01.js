@@ -10,9 +10,9 @@ function atoj(str){
 	document.getElementById("test").innerHTML += str + "<br>";
 }
 
-function jtoa(){
+function jtoaHandler(){
 	thisMovie("swfId").jtoa();
-	document.getElementById("test").innerHTML = "";
+	document.getElementById("test").innerHTML = "a <- j";
 }
 
 
