@@ -3,6 +3,6 @@
 <ModulePrefs title="test example" />
 <Content type="html"><![CDATA[
 <div id="main"></div>
-<script src="http://code.google.com/p/opensocialtest01/source/browse/trunk/osTest/test01.js"></script>
+<script src="http://opensocialtest01.googlecode.com/svn/trunk/osTest/test01.js"></script>
 ]]></Content>
 </Module>
