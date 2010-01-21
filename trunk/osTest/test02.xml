@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+  <ModulePrefs title="Just Read - Part 0 - Empty" author_email="your.email@foo.bar" height="500">
+    <Require feature="opensocial-0.7"/>
+  </ModulePrefs>
+  <Content type="html">
+    <![CDATA[
+	  <div id='main'></div>
+	  <script src="http://code.google.com/p/opensocialtest01/source/browse/trunk/osTest/test01.js" />
+	]]>
+  </Content>
+</Module>
