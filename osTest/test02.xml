@@ -6,7 +6,7 @@
   <Content type="html">
     <![CDATA[
 	  <div id='main'></div>
-	  <script src="http://code.google.com/p/opensocialtest01/source/browse/trunk/osTest/test01.js" />
+	  <script src="http://code.google.com/p/opensocialtest01/source/browse/trunk/osTest/test01.js"></script>
 	]]>
   </Content>
 </Module>
