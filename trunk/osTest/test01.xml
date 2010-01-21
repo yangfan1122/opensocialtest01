@@ -6,7 +6,14 @@
   <Content type="html">
     <![CDATA[	
 	  <div id='main'></div>
-	  <script src="http://code.google.com/p/opensocialtest01/source/browse/trunk/osTest/test01.js" type="text/javascript"></script>
+	  <!--<script src="http://code.google.com/p/opensocialtest01/source/browse/trunk/osTest/test01.js" type="text/javascript">-->
+	   <script>
+function init() {
+	document.getElementById("main").innerHTML = "啥都还没有";
+}
+gadgets.util.registerOnLoadHandler(init);
+
+	  </script>
 	]]>
   </Content>
 </Module>
