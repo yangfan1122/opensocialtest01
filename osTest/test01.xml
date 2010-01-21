@@ -17,7 +17,7 @@
 
 <input type="button" value="j to a" onclick="jtoaHandler()" />
 <div id='test'>output, here~</div>
-<script src="http://opensocialtest01.googlecode.com/svn/trunk/osTest/test01.xml" language="javascript"></script>
+<script src="http://opensocialtest01.googlecode.com/svn/trunk/osTest/test01.js" language="javascript"></script>
 
 
 ]]></Content>
