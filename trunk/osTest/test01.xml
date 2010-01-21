@@ -4,12 +4,9 @@
     <Require feature="opensocial-0.7"/>
   </ModulePrefs>
   <Content type="html">
-    <![CDATA[
-	
-	  <script src="http://code.google.com/p/opensocialtest01/source/browse/trunk/osTest/test01.js"></script>
-      
-      <div id='main'></div>
-	
+    <![CDATA[	
+	  <div id='main'></div>
+	  <script src="http://code.google.com/p/opensocialtest01/source/browse/trunk/osTest/test01.js" type="text/javascript"></script>
 	]]>
   </Content>
 </Module>
