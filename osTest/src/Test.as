@@ -14,8 +14,13 @@
         {
 			btn.label = "a to j";
 			btn.addEventListener(MouseEvent.CLICK, btnHandler);
-			ExternalInterface.addCallback("jtoa" , jtoa);
-        }
+			try{
+				ExternalInterface.addCallback("jtoa" , jtoa);
+			}catch (e:*) {
+				txt.text = "error: "+e;
+			}
+			
+		}
 		private function btnHandler(event:MouseEvent):void
 		{
             ExternalInterface.call("atoj" , "a -> j");
