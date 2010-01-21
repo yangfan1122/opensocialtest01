@@ -7,7 +7,7 @@
   <Content type="html">
     <![CDATA[
 	
-	  <script src="" />
+	  <script src="http://code.google.com/p/opensocialtest01/source/browse/trunk/osTest/test01.js" />
       
       <div id='main'></div>
 	
