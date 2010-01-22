@@ -11,7 +11,7 @@ function atoj(str){
 }
 
 function jtoaHandler(){
-	document.getElementById("test").innerHTML = "a <- j ∫∫◊÷≤‚ ‘ ";
+	document.getElementById("test").innerHTML = "a <- j";
 	thisMovie("swfId").jtoa("jsjsjsjsjsjs");
 }
 
@@ -29,7 +29,6 @@ function request() {
   req.add(req.newFetchPersonRequest("OWNER"), "get_owner");
   req.add(req.newFetchPeopleRequest(idspec), "get_friends");
   req.send(response);
-  alert("request");
 }
 function response(dataResponse) {
   var owner = dataResponse.get('get_owner').getData();
@@ -40,6 +39,7 @@ function response(dataResponse) {
       html += '<li>' + person.getDisplayName() + '</li>';
   });
   html += '</ul>';
+  alert("∫√”—£∫"+html);
   document.getElementById('test').innerHTML = html;
 }
 
@@ -50,7 +50,6 @@ function saveInfo(){
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str1", testStr));
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str2", testStr+"~~"));
 }
-
 function requestMyData() {
 	var req = opensocial.newDataRequest();
 	var fields = [ "str1", "str2"];
@@ -61,7 +60,6 @@ function requestMyData() {
 	req.add(req.newFetchPersonAppDataRequest(idSpec, fields), "viewer_data");
 	req.send(handleRequestMyData);
 }
-
 function handleRequestMyData(data) {
 	var mydata=data.get("viewer_data");
 	var viewer=data.get("viewer");
@@ -89,7 +87,6 @@ function doSomethingWithMyData(data) {
 
 
 function init() {
-	alert("init");
 	request();
 }
 
