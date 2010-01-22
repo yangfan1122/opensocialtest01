@@ -17,12 +17,19 @@
 			Security.allowDomain("*");
 			
 			btn.label = "a to j";
+			btn1.label = "save";
 			btn.addEventListener(MouseEvent.CLICK, btnHandler);
+			btn1.addEventListener(MouseEvent.CLICK, btn1Handler);
 			ExternalInterface.addCallback("jtoa" , jtoa);
 		}
+		private function callJs(str:String):void{
+			ExternalInterface.call("atoj" , str);
+		}
+		
+		
 		private function btnHandler(event:MouseEvent):void
 		{
-            ExternalInterface.call("atoj" , "a -> j");
+            callJs("a -> j");
 			txt.text = "a -> j";
 		}
 		private function jtoa(str:String):void
@@ -30,7 +37,10 @@
 			txt.text = "from js: "+str;
 			//txt.text = "a <- j";
 		}
-		
+		private function btn1Handler(event:MouseEvent):void
+		{
+			callJs(txt1.text);
+		}
 		
     }
 }
