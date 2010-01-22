@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
-<ModulePrefs title="test example" />
+<ModulePrefs title="test example"
+               author_email="your.email@foo.bar" scrolling="true" height="500">
+  <Require feature="opensocial-0.7"/>
+</ModulePrefs>
 <Content type="html"><![CDATA[
 
 
