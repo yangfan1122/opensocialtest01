@@ -43,6 +43,7 @@ function reloadAll() {
 	req.add(req.newFetchPersonRequest('VIEWER'),'v');
 	req.add(req.newFetchPeopleRequest('VIEWER_FRIENDS'),'vf');
 	req.send(onReloadAll);
+	alert("onReloadAll = "+onReloadAll);
 }
 
 
