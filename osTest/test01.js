@@ -89,6 +89,7 @@ function doSomethingWithMyData(data) {
 
 
 function init() {
+	alert("init");
 	request();
 }
 
