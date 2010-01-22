@@ -39,11 +39,12 @@ function showBasic() {
 
 /* 发送 Opensocial API 请求 */
 function reloadAll() {
+	alert("1 onReloadAll = "+onReloadAll);
 	var req=new opensocial.DataRequest  ;
 	req.add(req.newFetchPersonRequest('VIEWER'),'v');
 	req.add(req.newFetchPeopleRequest('VIEWER_FRIENDS'),'vf');
 	req.send(onReloadAll);
-	alert("onReloadAll = "+onReloadAll);
+	alert("2 onReloadAll = "+onReloadAll);
 }
 
 
@@ -62,8 +63,7 @@ function onReloadAll(dataResponse) {
 
 /* Gadget 执行入口 */
 function init() {
-	//reloadAll();
-	alert("init");
+	reloadAll();
 }
 
 gadgets.util.registerOnLoadHandler(init);
