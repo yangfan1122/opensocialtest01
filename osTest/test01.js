@@ -8,7 +8,7 @@ function thisMovie(movieName) {
 function atoj(str){
 	document.getElementById("test").innerHTML = str;
 	testStr = str;
-	saveInfo();
+	//saveInfo();
 }
 
 function jtoaHandler(){
