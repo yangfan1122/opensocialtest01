@@ -25,9 +25,9 @@
             ExternalInterface.call("atoj" , "a -> j");
 			txt.text = "a -> j";
 		}
-		private function jtoa(str:String):void
+		private function jtoa():void
 		{
-			txt.text = "a <- j : "+str;
+			txt.text = "a <- j";
 		}
 		
 		
