@@ -11,7 +11,7 @@ function atoj(str){
 }
 
 function jtoaHandler(){
-	document.getElementById("test").innerHTML = "a <- j";
+	document.getElementById("test").innerHTML = "a <- j ∫∫◊÷≤‚ ‘";
 	thisMovie("swfId").jtoa("jsjsjsjsjsjs");
 }
 
@@ -39,7 +39,6 @@ function response(dataResponse) {
       html += '<li>' + person.getDisplayName() + '</li>';
   });
   html += '</ul>';
-  alert("∫√”—£∫"+html);
   document.getElementById('test').innerHTML = html;
 }
 
