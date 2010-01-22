@@ -14,7 +14,7 @@
     {
         public function Test():void
         {
-			Security.allowDomain("google.com");
+			Security.allowDomain("orkut.com");
 			
 			btn.label = "a to j";
 			btn.addEventListener(MouseEvent.CLICK, btnHandler);
