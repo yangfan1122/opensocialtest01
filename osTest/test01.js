@@ -43,7 +43,7 @@ function response(dataResponse) {
   document.getElementById('test').innerHTML = html;
 }
 
-
+/*
 //saveInfo
 function saveInfo(){
 	var req = opensocial.newDataRequest();
@@ -82,7 +82,7 @@ function doSomethingWithMyData(data) {
 	div.innerHTML=htmlout;
 }
 
-
+*/
 
 
 
