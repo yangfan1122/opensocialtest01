@@ -50,7 +50,7 @@ function saveInfo(){
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str1", testStr));
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str2", testStr+"~~"));
 }
-
+/*
 function requestMyData() {
 	var req = opensocial.newDataRequest();
 	var fields = [ "str1", "str2"];
@@ -61,7 +61,7 @@ function requestMyData() {
 	req.add(req.newFetchPersonAppDataRequest(idSpec, fields), "viewer_data");
 	req.send(handleRequestMyData);
 }
-/*
+
 function handleRequestMyData(data) {
 	var mydata=data.get("viewer_data");
 	var viewer=data.get("viewer");
