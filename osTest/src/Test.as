@@ -14,7 +14,7 @@
     {
         public function Test():void
         {
-			Security.allowDomain("*");
+			Security.allowDomain("http://sandbox.orkut.com/Main#Application?uid=5380566208848043945&appId=872448582137");
 			
 			btn.label = "a to j";
 			btn.addEventListener(MouseEvent.CLICK, btnHandler);
