@@ -39,8 +39,7 @@ function showBasic() {
 
 /* ∑¢ÀÕ Opensocial API «Î«Û */
 function reloadAll() {
-	//var req=new opensocial.DataRequest;
-	var req = opensocial.newDataRequest();
+	var req=new opensocial.DataRequest;
 	req.add(req.newFetchPersonRequest('VIEWER'),'v');
 	req.add(req.newFetchPeopleRequest('VIEWER_FRIENDS'),'vf');
 	req.send(onReloadAll);
