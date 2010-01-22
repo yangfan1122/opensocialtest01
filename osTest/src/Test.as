@@ -14,7 +14,7 @@
     {
         public function Test():void
         {
-			Security.allowDomain("*");
+			Security.allowDomain("myyule.com");
 			
 			btn.label = "a to j";
 			btn.addEventListener(MouseEvent.CLICK, btnHandler);
