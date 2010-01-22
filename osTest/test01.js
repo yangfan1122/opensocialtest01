@@ -5,9 +5,9 @@ function thisMovie(movieName) {
              return document[movieName];
     }
 }
-
 function atoj(str){
 	document.getElementById("test").innerHTML = str;
+	testStr = str;
 }
 
 function jtoaHandler(){
@@ -17,7 +17,12 @@ function jtoaHandler(){
 
 
 
-//Gadget
+//Gadget -----------------------------------
+
+var testStr;
+
+
+//getFriends
 function request() {
   var idspec = opensocial.newIdSpec({ "userId" : "OWNER", "groupId" : "FRIENDS" });
   var req = opensocial.newDataRequest();
@@ -36,6 +41,49 @@ function response(dataResponse) {
   html += '</ul>';
   document.getElementById('test').innerHTML = html;
 }
+
+
+//saveInfo
+function saveInfo(){
+	var req = opensocial.newDataRequest();
+	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str1", testStr));
+	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str2", testStr+"~~"));
+}
+function requestMyData() {
+	var req = opensocial.newDataRequest();
+	var fields = [ "str1", "str2"];
+	var p = {};
+  
+	p[opensocial.IdSpec.Field.USER_ID[]] = opensocial.IdSpec.PersonId.VIEWER;
+	var idSpec = opensocial.newIdSpec(p);
+	req.add(req.newFetchPersonAppDataRequest(idSpec, fields), "viewer_data");
+	req.send(handleRequestMyData);
+}
+function handleRequestMyData(data) {
+	var mydata=data.get("viewer_data");
+	var viewer=data.get("viewer");
+	me=viewer.getData();
+
+	if (mydata.hadError()) {
+		htmlout+=data.getErrorMessage();
+		return;
+	}
+	// Do something with the returned data - note the getData call
+	doSomethingWithMyData(mydata.getData());
+}
+function doSomethingWithMyData(data) {
+	//Data is indexed by user id, and represents an object where keys 
+	//correspond with the app data fields.
+	var mydata=data[me.getId()];
+	var div=document.getElementById('test');
+	htmlout+="My AppField1 data is: "+mydata["str1"]+"<br />";
+	htmlout+="My AppField2 data is: "+mydata["str2"]+"<br />";
+	div.innerHTML=htmlout;
+}
+
+
+
+
 
 function init() {
 	request();
