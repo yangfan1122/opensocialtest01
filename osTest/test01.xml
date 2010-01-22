@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
 <ModulePrefs title="test example"
-               author_email="your.email@foo.bar" scrolling="true" height="500">
-  <Require feature="opensocial-0.7"/>
+               author_email="yangfan1122@gmail.com" scrolling="true" height="500">
+  <Require feature="opensocial-0.8"/>
 </ModulePrefs>
 <Content type="html"><![CDATA[
 
@@ -25,3 +25,9 @@
 
 ]]></Content>
 </Module>
+
+
+
+
+
+

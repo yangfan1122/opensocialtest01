@@ -18,51 +18,27 @@ function jtoaHandler(){
 
 
 //Gadget
-var viewer;// 类型：opensocial.Person
-var viewerFriends;// 类型：opensocial.Collection
-
-
-/* 显示基本信息 */
-function showBasic() {
-	/* 显示 VIEWER 名字 */
-	document.getElementById('test').innerHTML=viewer.getDisplayName();
-
-	/* 显示 VIEWER 的朋友名字 */
-	var html=new Array  ;
-	viewerFriends.each(function(friend) {
-	            html.push(friend.getDisplayName() + ", ");
-	          });
-	document.getElementById('friends').innerHTML=html.join('');
+function request() {
+  var idspec = opensocial.newIdSpec({ "userId" : "OWNER", "groupId" : "FRIENDS" });
+  var req = opensocial.newDataRequest();
+  req.add(req.newFetchPersonRequest("OWNER"), "get_owner");
+  req.add(req.newFetchPeopleRequest(idspec), "get_friends");
+  req.send(response);
+}
+function response(dataResponse) {
+  var owner = dataResponse.get('get_owner').getData();
+  var friends = dataResponse.get('get_friends').getData(); 
+  var html = 'Friends of ' + owner.getDisplayName();
+  html += ':<br><ul>';
+  friends.each(function(person) {
+      html += '<li>' + person.getDisplayName() + '</li>';
+  });
+  html += '</ul>';
+  document.getElementById('test').innerHTML = html;
 }
 
-
-
-/* 发送 Opensocial API 请求 */
-function reloadAll() {
-	var req=new opensocial.DataRequest;
-	req.add(req.newFetchPersonRequest('VIEWER'),'v');
-	req.add(req.newFetchPeopleRequest('VIEWER_FRIENDS'),'vf');
-	req.send(onReloadAll);
-	
-}
-
-
-
-/* 处理 Opensocial API 响应 */
-function onReloadAll(dataResponse) {
-	/* 获取数据 */
-	viewer=dataResponse.get('v').getData()||{};
-	viewerFriends=dataResponse.get('vf').getData()||{};
-
-	/* 显示数据 */
-	showBasic();
-}
-
-
-
-/* Gadget 执行入口 */
 function init() {
-	reloadAll();
+	request();
 }
 
 gadgets.util.registerOnLoadHandler(init);
