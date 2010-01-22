@@ -14,7 +14,7 @@
     {
         public function Test():void
         {
-			Security.allowDomain("http://code.google.com/p/opensocialtest01/");
+			Security.allowDomain("google.com");
 			
 			btn.label = "a to j";
 			btn.addEventListener(MouseEvent.CLICK, btnHandler);
