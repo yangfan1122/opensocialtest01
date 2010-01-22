@@ -14,7 +14,7 @@
     {
         public function Test():void
         {
-			//Security.allowDomain("*");
+			Security.allowDomain("*");
 			
 			btn.label = "a to j";
 			btn.addEventListener(MouseEvent.CLICK, btnHandler);
@@ -25,9 +25,9 @@
             ExternalInterface.call("atoj" , "a -> j");
 			txt.text = "a -> j";
 		}
-		private function jtoa():void
+		private function jtoa(str:String):void
 		{
-			txt.text = "a <- j";
+			txt.text = "a <- j : "+str;
 		}
 		
 		
