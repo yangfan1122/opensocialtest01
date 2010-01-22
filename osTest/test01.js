@@ -43,14 +43,14 @@ function response(dataResponse) {
   document.getElementById('test').innerHTML = html;
 }
 
-
+/*
 //saveInfo
 function saveInfo(){
 	var req = opensocial.newDataRequest();
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str1", testStr));
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str2", testStr+"~~"));
 }
-/*
+
 function requestMyData() {
 	var req = opensocial.newDataRequest();
 	var fields = [ "str1", "str2"];
