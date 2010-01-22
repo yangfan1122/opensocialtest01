@@ -15,7 +15,6 @@
         public function Test():void
         {
 			Security.allowDomain("*");
-			Security.allowInsecureDomain("*");
 			
 			btn.label = "a to j";
 			btn.addEventListener(MouseEvent.CLICK, btnHandler);
