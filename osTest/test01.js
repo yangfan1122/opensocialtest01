@@ -62,7 +62,8 @@ function onReloadAll(dataResponse) {
 
 /* Gadget Ö´ÐÐÈë¿Ú */
 function init() {
-	reloadAll();
+	//reloadAll();
+	alert("init");
 }
 
 gadgets.util.registerOnLoadHandler(init);
