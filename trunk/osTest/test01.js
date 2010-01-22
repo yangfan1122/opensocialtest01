@@ -29,6 +29,7 @@ function request() {
   req.add(req.newFetchPersonRequest("OWNER"), "get_owner");
   req.add(req.newFetchPeopleRequest(idspec), "get_friends");
   req.send(response);
+  alert("request");
 }
 function response(dataResponse) {
   var owner = dataResponse.get('get_owner').getData();
