@@ -68,7 +68,7 @@ function requestMyData() {
 	
 	alert("ok?");
 	
-	//p[opensocial.IdSpec.Field.USER_ID[]] = opensocial.IdSpec.PersonId.VIEWER;
+	p[opensocial.IdSpec.Field.USER_ID] = opensocial.IdSpec.PersonId.VIEWER;
 	alert("ok~");
 	/*
 	var idSpec = opensocial.newIdSpec(p);
