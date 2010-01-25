@@ -72,6 +72,7 @@ function handleRequestMyData(data) {
 	// Do something with the returned data - note the getData call
 	doSomethingWithMyData(mydata.getData());
 }
+/*
 function doSomethingWithMyData(data) {
 	//Data is indexed by user id, and represents an object where keys 
 	//correspond with the app data fields.
@@ -81,7 +82,7 @@ function doSomethingWithMyData(data) {
 	htmlout+="My AppField2 data is: "+mydata["str2"]+"<br />";
 	div.innerHTML=htmlout;
 }
-
+*/
 
 
 
