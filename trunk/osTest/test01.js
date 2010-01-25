@@ -61,7 +61,7 @@ function requestMyData() {
 	var fields = [ "str1", "str2"];
 	var p = {};
 	
-	p[opensocial.IdSpec.Field.USER_ID] = opensocial.IdSpec.PersonId.VIEWER;
+	p[opensocial.IdSpec.Field.USER_ID] = opensocial.IdSpec.PersonId.VIEWER;//!!
 	var idSpec = opensocial.newIdSpec(p);
 	req.add(req.newFetchPersonAppDataRequest(idSpec, fields), "viewer_data");
 	req.send(handleRequestMyData);
@@ -81,10 +81,9 @@ function requestMyData() {
 function handleRequestMyData(data) {
 	document.getElementById("test").innerHTML = "data.get('viewer_data') = "+data.get("viewer_data").getData();
 	var mydata=data.get("viewer_data");
-	alert(1);
 	var viewer=data.get("viewer");
-	alert(2);
-	me=viewer.getData();
+	alert("viewer = "+viewer);
+	me=viewer.getData();//!!
 	document.getElementById("test").innerHTML = "me = "+me;
 	if (mydata.hadError()) {
 	htmlout+=data.getErrorMessage();
