@@ -24,7 +24,7 @@ var htmlout = "";
 var me = null;
 
 
-
+/*
 //getFriends
 function request() {
   var idspec = opensocial.newIdSpec({ "userId" : "OWNER", "groupId" : "FRIENDS" });
@@ -88,7 +88,7 @@ function doSomethingWithMyData(data) {
 	div.innerHTML=htmlout;
 }
 
-
+*/
 
 
 
