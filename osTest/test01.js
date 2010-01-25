@@ -70,8 +70,8 @@ function requestMyData() {
 
 	var req = opensocial.newDataRequest();
     var fields = [ "str1", "str2" ];
-	alert("opensocial.IdSpec.PersonId.VIEWER = "+opensocial.IdSpec.PersonId.VIEWER);
     req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
+	alert("req.newFetchPersonAppDataRequest('VIEWER', fields) = "+req.newFetchPersonAppDataRequest("VIEWER", fields));
     req.add(req.newFetchPersonAppDataRequest("VIEWER", fields), "viewer_data");//!!
     req.send(handleRequestMyData);
 	
