@@ -20,6 +20,9 @@ function jtoaHandler(){
 //Gadget -----------------------------------
 
 var testStr;
+var htmlout = "";
+var me = null;
+
 
 
 //getFriends
@@ -44,7 +47,7 @@ function response(dataResponse) {
 
 
 //saveInfo
-/*
+
 function saveInfo(){
 	var req = opensocial.newDataRequest();
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str1", testStr));
@@ -84,7 +87,7 @@ function doSomethingWithMyData(data) {
 	htmlout+="My AppField2 data is: "+mydata["str2"]+"<br />";
 	div.innerHTML=htmlout;
 }
-*/
+
 
 
 
