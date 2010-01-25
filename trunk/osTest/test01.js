@@ -12,7 +12,7 @@ function atoj(str){
 }
 
 function jtoaHandler(){
-	document.getElementById("test").innerHTML = "a <- j";
+	document.getElementById("test").innerHTML = "a <- j / testStr="+testStr;
 	thisMovie("swfId").jtoa("a <- j");
 	requestMyData();
 }
@@ -67,9 +67,10 @@ function requestMyData() {
 
 	
 	alert("ok?");
-	/*
+	
 	p[opensocial.IdSpec.Field.USER_ID[]] = opensocial.IdSpec.PersonId.VIEWER;
 	alert("ok~");
+	/*
 	var idSpec = opensocial.newIdSpec(p);
 	req.add(req.newFetchPersonAppDataRequest(idSpec, fields), "viewer_data");
 	req.send(handleRequestMyData);
