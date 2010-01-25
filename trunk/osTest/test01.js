@@ -60,6 +60,7 @@ function requestMyData() {
 	var fields = [ "str1", "str2"];
 	var p = {};
 	
+	alert(0);
 	p[opensocial.IdSpec.Field.USER_ID[]] = opensocial.IdSpec.PersonId.VIEWER;
 	alert(1);
 	var idSpec = opensocial.newIdSpec(p);
