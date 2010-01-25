@@ -53,6 +53,7 @@ function response(dataResponse) {
 
 function saveInfo(){
 	var req = opensocial.newDataRequest();
+	alert("in save : testStr="+testStr);
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str1", testStr));
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str2", testStr+"~~"));
 }
