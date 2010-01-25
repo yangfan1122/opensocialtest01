@@ -70,11 +70,15 @@ function requestMyData() {
 	*/
 	alert("111");
 	var req = opensocial.newDataRequest();
-    var fields = [ "str1", "str2" ];
-    req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
-    req.add(req.newFetchPersonAppDataRequest("VIEWER", fields), "viewer_data");
-    req.send(handleRequestMyData);
 	alert("222");
+    var fields = [ "str1", "str2" ];
+	alert("333");
+    req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
+	alert("444");
+    req.add(req.newFetchPersonAppDataRequest("VIEWER", fields), "viewer_data");
+	alert("555");
+    req.send(handleRequestMyData);
+	alert("666");
 }
 
 function handleRequestMyData(data) {
