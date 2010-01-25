@@ -63,7 +63,7 @@ function requestMyData() {
 	var fields = [ "str1", "str2"];
 	var p = {};
 	
-	document.getElementById("test").innerHTML = "fields="+fields+" ; req="+req+" ; p="+p;
+	document.getElementById("test").innerHTML = "fields="+fields+" ; req="+req+" ; p="+p+" ; opensocial.IdSpec.Field.USER_ID="+opensocial.IdSpec.Field.USER_ID;
 
 	
 	alert("ok?");
