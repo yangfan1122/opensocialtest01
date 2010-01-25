@@ -24,7 +24,7 @@ var htmlout = "";
 var me = null;
 
 
-/*
+
 //getFriends
 function request() {
   var idspec = opensocial.newIdSpec({ "userId" : "OWNER", "groupId" : "FRIENDS" });
@@ -63,7 +63,7 @@ function requestMyData() {
 	req.add(req.newFetchPersonAppDataRequest(idSpec, fields), "viewer_data");
 	req.send(handleRequestMyData);
 }
-
+/*
 function handleRequestMyData(data) {
 	var mydata=data.get("viewer_data");
 	var viewer=data.get("viewer");
