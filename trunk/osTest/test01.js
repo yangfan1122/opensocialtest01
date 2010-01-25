@@ -13,7 +13,7 @@ function atoj(str){
 
 function jtoaHandler(){
 	document.getElementById("test").innerHTML = "a <- j";
-	thisMovie("swfId").jtoa("testStr = "+testStr);
+	thisMovie("swfId").jtoa("a <- j");
 	requestMyData();
 }
 
@@ -65,8 +65,9 @@ function requestMyData() {
 	
 	document.getElementById("test").innerHTML = "fields="+fields+" ; req="+req+" ; p="+p;
 
-	/*
+	
 	alert("ok?");
+	/*
 	p[opensocial.IdSpec.Field.USER_ID[]] = opensocial.IdSpec.PersonId.VIEWER;
 	alert("ok~");
 	var idSpec = opensocial.newIdSpec(p);
