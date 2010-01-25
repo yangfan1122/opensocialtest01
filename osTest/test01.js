@@ -60,9 +60,9 @@ function requestMyData() {
 	var fields = [ "str1", "str2"];
 	var p = {};
 	
-	alert(0);
+	alert("0");
 	p[opensocial.IdSpec.Field.USER_ID[]] = opensocial.IdSpec.PersonId.VIEWER;
-	alert(1);
+	alert("1");
 	var idSpec = opensocial.newIdSpec(p);
 	alert(2);
 	req.add(req.newFetchPersonAppDataRequest(idSpec, fields), "viewer_data");
