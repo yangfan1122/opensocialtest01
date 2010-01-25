@@ -62,8 +62,7 @@ function requestMyData() {
 	var req = opensocial.newDataRequest();
 	var fields = [ "str1", "str2"];
 	var p = {};
-	alert("0");
-	/*
+	
 	alert("0");
 	p[opensocial.IdSpec.Field.USER_ID[]] = opensocial.IdSpec.PersonId.VIEWER;
 	alert("1");
@@ -73,7 +72,7 @@ function requestMyData() {
 	alert(3);
 	req.send(handleRequestMyData);
 	alert(4);
-	*/
+	
 
 	/*
 	var req = opensocial.newDataRequest();
