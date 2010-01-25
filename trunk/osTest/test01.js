@@ -59,13 +59,17 @@ function requestMyData() {
 	var req = opensocial.newDataRequest();
 	var fields = [ "str1", "str2"];
 	var p = {};
-	/*
+	
 	p[opensocial.IdSpec.Field.USER_ID[]] = opensocial.IdSpec.PersonId.VIEWER;
+	alert(1);
 	var idSpec = opensocial.newIdSpec(p);
+	alert(2);
 	req.add(req.newFetchPersonAppDataRequest(idSpec, fields), "viewer_data");
+	alert(3);
 	req.send(handleRequestMyData);
+	alert(4);
 
-
+	/*
 	var req = opensocial.newDataRequest();
     var fields = [ "AppField1", "AppField2", "AppField3" ];
     req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
