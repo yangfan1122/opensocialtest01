@@ -55,11 +55,11 @@ function saveInfo(){
 }
 
 function requestMyData() {
-	/*
+	
 	var req = opensocial.newDataRequest();
 	var fields = [ "str1", "str2"];
 	var p = {};
-  
+	/*
 	p[opensocial.IdSpec.Field.USER_ID[]] = opensocial.IdSpec.PersonId.VIEWER;
 	var idSpec = opensocial.newIdSpec(p);
 	req.add(req.newFetchPersonAppDataRequest(idSpec, fields), "viewer_data");
