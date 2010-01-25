@@ -14,7 +14,6 @@ function atoj(str){
 function jtoaHandler(){
 	document.getElementById("test").innerHTML = "a <- j";
 	thisMovie("swfId").jtoa("testStr = "+testStr);
-	alert("testStr = "+testStr);
 	requestMyData();
 }
 
@@ -69,13 +68,13 @@ function requestMyData() {
 	req.add(req.newFetchPersonAppDataRequest(idSpec, fields), "viewer_data");
 	req.send(handleRequestMyData);
 	*/
-
+	alert("111");
 	var req = opensocial.newDataRequest();
     var fields = [ "str1", "str2" ];
     req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
     req.add(req.newFetchPersonAppDataRequest("VIEWER", fields), "viewer_data");
     req.send(handleRequestMyData);
-	alert("````````");
+	alert("222");
 }
 
 function handleRequestMyData(data) {
