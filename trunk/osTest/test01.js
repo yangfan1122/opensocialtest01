@@ -58,6 +58,8 @@ function saveInfo(){
 
 function requestMyData() {
 	
+	document.getElementById("test").innerHTML = "opensocial.IdSpec.PersonId.VIEWER = "+opensocial.IdSpec.PersonId.VIEWER;
+	/*
 	var req = opensocial.newDataRequest();
 	alert("1");
 	var fields = [ "str1", "str2"];
@@ -70,7 +72,7 @@ function requestMyData() {
 	var idSpec = opensocial.newIdSpec(p);
 	req.add(req.newFetchPersonAppDataRequest(idSpec, fields), "viewer_data");
 	req.send(handleRequestMyData);
-	
+	*/
 	
 	/*
 	var req = opensocial.newDataRequest();
