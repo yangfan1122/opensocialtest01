@@ -13,7 +13,7 @@ function atoj(str){
 
 function jtoaHandler(){
 	document.getElementById("test").innerHTML = "a <- j";
-	thisMovie("swfId").jtoa("jsjsjsjsjsjs");
+	thisMovie("swfId").jtoa("testStr = "+testStr);
 
 	requestMyData();
 }
