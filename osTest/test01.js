@@ -58,14 +58,14 @@ function saveInfo(){
 
 function requestMyData() {
 	
-	document.getElementById("test").innerHTML = "opensocial.IdSpec.PersonId.VIEWER = "+opensocial.IdSpec.PersonId.VIEWER;
-	/*
+	
 	var req = opensocial.newDataRequest();
-	alert("1");
 	var fields = [ "str1", "str2"];
-	alert("2");
 	var p = {};
 	
+	document.getElementById("test").innerHTML = "fields="+fields+" ; req="+req+" ; p="+p;
+
+	/*
 	alert("ok?");
 	p[opensocial.IdSpec.Field.USER_ID[]] = opensocial.IdSpec.PersonId.VIEWER;
 	alert("ok~");
