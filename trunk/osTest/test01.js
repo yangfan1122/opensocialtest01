@@ -39,11 +39,10 @@ function response(dataResponse) {
       html += '<li>' + person.getDisplayName() + '</li>';
   });
   html += '</ul>';
-  alert("∫√”—£∫"+html);
   document.getElementById('test').innerHTML = html;
 }
 
-/*
+
 //saveInfo
 function saveInfo(){
 	var req = opensocial.newDataRequest();
@@ -60,6 +59,7 @@ function requestMyData() {
 	req.add(req.newFetchPersonAppDataRequest(idSpec, fields), "viewer_data");
 	req.send(handleRequestMyData);
 }
+/*
 function handleRequestMyData(data) {
 	var mydata=data.get("viewer_data");
 	var viewer=data.get("viewer");
