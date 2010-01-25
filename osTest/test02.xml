@@ -80,7 +80,7 @@
    }
    
  </script>
- <div id="content_div"></div>
+ <div id="content_div">output here</div>
   ]]> 
   </Content>
 </Module>
