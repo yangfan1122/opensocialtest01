@@ -14,7 +14,7 @@ function atoj(str){
 function jtoaHandler(){
 	document.getElementById("test").innerHTML = "a <- j";
 	thisMovie("swfId").jtoa("testStr = "+testStr);
-
+	alert("testStr = "+testStr);
 	requestMyData();
 }
 
