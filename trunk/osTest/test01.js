@@ -53,8 +53,9 @@ function saveInfo(){
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str1", testStr));
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str2", testStr+"~~"));
 }
-/*
+
 function requestMyData() {
+	/*
 	var req = opensocial.newDataRequest();
 	var fields = [ "str1", "str2"];
 	var p = {};
@@ -63,8 +64,16 @@ function requestMyData() {
 	var idSpec = opensocial.newIdSpec(p);
 	req.add(req.newFetchPersonAppDataRequest(idSpec, fields), "viewer_data");
 	req.send(handleRequestMyData);
-}
 
+
+	var req = opensocial.newDataRequest();
+    var fields = [ "AppField1", "AppField2", "AppField3" ];
+    req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
+    req.add(req.newFetchPersonAppDataRequest("VIEWER", fields), "viewer_data");
+    req.send(handleRequestMyData);
+	*/
+}
+/*
 function handleRequestMyData(data) {
 	var mydata=data.get("viewer_data");
 	var viewer=data.get("viewer");
