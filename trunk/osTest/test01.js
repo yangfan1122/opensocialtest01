@@ -72,7 +72,7 @@ function requestMyData() {
     var fields = [ "str1", "str2" ];
     req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
 	alert("ok?");
-    req.add(req.newFetchPersonAppDataRequest("VIEWER", *), "viewer_data");//!!
+    req.add(req.newFetchPersonAppDataRequest(opensocial.IdSpec.PersonId.VIEWER, fields), "viewer_data");//!!
 	alert("ok~");
     req.send(handleRequestMyData);
 	
