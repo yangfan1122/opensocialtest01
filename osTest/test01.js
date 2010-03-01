@@ -60,6 +60,7 @@ function saveInfo(){
 }
 
 function requestMyData() {
+	alert(1);
 	var req = opensocial.newDataRequest();
 	var fields = [ "str1", "str2"];
 	var p = {};
