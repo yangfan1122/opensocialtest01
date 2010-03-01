@@ -56,7 +56,7 @@ function saveInfo(){
 	var req = opensocial.newDataRequest();
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str1", "aaaaaaaaaaaaaaaaaa"));
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str2", "bbbbbbbbbbbbbbbbbb"));
-
+	requestMyData();
 }
 
 function requestMyData() {
