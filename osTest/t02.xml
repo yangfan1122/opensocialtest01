@@ -32,6 +32,7 @@
     * Handle responses from update person app data requests
     */
    function handlePopulateMyAppData(data) {
+     alert(2);
      if (data.hadError()) {
        htmlout += data.getErrorMessage();
      }
@@ -42,6 +43,7 @@
     * Fetch app data
     */
    function requestMyData() {
+     alert(3);
      var req = opensocial.newDataRequest();
      var fields = [ "AppField1", "AppField2", "AppField3" ];
      req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
@@ -53,6 +55,7 @@
     * Handle responses from app data requests
     */
    function handleRequestMyData(data) {
+     alert(4);
      var mydata = data.get("viewer_data");
      var viewer = data.get("viewer");
      me = viewer.getData();
