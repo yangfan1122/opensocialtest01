@@ -15,7 +15,6 @@
     * Set user data
     */
    function populateMyAppData() {
-	 alert("1");
      var req = opensocial.newDataRequest();
      var data1 = Math.random() * 5;
      var data2 = Math.random() * 100;
@@ -70,6 +69,7 @@
    * Operate on user data
    */
    function doSomethingWithMyData(data) {
+     alert("data = "+data);
      //Data is indexed by user id, and represents an object where keys 
      //correspond with the app data fields.
      var mydata = data[me.getId()];
