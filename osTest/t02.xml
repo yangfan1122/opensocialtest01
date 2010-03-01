@@ -47,8 +47,11 @@
      var req = opensocial.newDataRequest();
      var fields = [ "AppField1", "AppField2", "AppField3" ];
      req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
+	 alert(3.5);
      req.add(req.newFetchPersonAppDataRequest("VIEWER", fields), "viewer_data");
+	 alert(3.6);
      req.send(handleRequestMyData);
+	 alert(3.7);
    }
 
    /**
