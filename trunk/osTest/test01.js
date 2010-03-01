@@ -51,9 +51,12 @@ function response(dataResponse) {
 //saveInfo
 
 function saveInfo(){
+	alert("testStr = "+testStr);
+
 	var req = opensocial.newDataRequest();
-	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str1", testStr));
-	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str2", testStr+"~~"));
+	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str1", "aaaaaaaaaaaaaaaaaa"));
+	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str2", "bbbbbbbbbbbbbbbbbb"));
+
 }
 
 function requestMyData() {
@@ -111,6 +114,7 @@ function doSomethingWithMyData(data) {
 
 function init() {
 	request();
+
 }
 
 gadgets.util.registerOnLoadHandler(init);
