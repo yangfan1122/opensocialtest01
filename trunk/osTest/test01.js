@@ -85,7 +85,7 @@ function handleRequestMyData(data) {
 	var mydata=data.get("viewer_data");
 	var viewer=data.get("viewer");
 	alert(5);
-	alert(viewer.getData());
+	alert(mydata.getData());
 	me=viewer.getData();
 	document.getElementById("test").innerHTML = "me = "+me;
 	if (mydata.hadError()) {
