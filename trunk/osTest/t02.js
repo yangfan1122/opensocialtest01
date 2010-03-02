@@ -17,6 +17,7 @@ function populateMyAppData() {
 	htmlout+="Setting AppField3 to "+data3+"<br />";
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER","AppField3",data3))+"<br />";
 	req.send(handlePopulateMyAppData);
+	alert("htmlout = "+htmlout);
 }
 
 /**
@@ -37,7 +38,7 @@ function requestMyData() {
 	var fields=["AppField1","AppField2","AppField3"];
 	req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
 	alert("3.0");
-	//req.add(req.newFetchPersonAppDataRequest("VIEWER", fields), "viewer_data");
+	req.add(req.newFetchPersonAppDataRequest("VIEWER", fields), "viewer_data");
 	alert("3.1");
 	req.send(handleRequestMyData);
 }
