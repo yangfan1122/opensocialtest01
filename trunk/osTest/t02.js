@@ -38,10 +38,10 @@ function requestMyData() {
 	var req = opensocial.newDataRequest();
 	var fields = [ "AppField1", "AppField2", "AppField3" ];
 	var p = {};
-  
+    output(opensocial.IdSpec.Field.USER_ID[]);
 	p[opensocial.IdSpec.Field.USER_ID[]] = opensocial.IdSpec.PersonId.VIEWER;
 	var idSpec = opensocial.newIdSpec(p);
-	alert("idSpec = "+idSpec);
+	output("idSpec = "+idSpec);
 	req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
 	req.add(req.newFetchPersonAppDataRequest(idSpec, fields), "viewer_data");
 	req.send(handleRequestMyData);
