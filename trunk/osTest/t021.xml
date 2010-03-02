@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+  <ModulePrefs title="Data Persistence Example" > 
+    <Require feature="opensocial-0.8"/>
+  </ModulePrefs>
+  <Content type="html">
+  <![CDATA[
+
+  <script src="http://opensocialtest01.googlecode.com/svn/trunk/osTest/t02.js" language="javascript"></script>
+
+  <div id="content_div"></div>
+  ]]> 
+  </Content>
+</Module>
