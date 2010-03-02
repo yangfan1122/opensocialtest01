@@ -6,7 +6,6 @@ var me=null;
     * Set user data
     */
 function populateMyAppData() {
-	alert("entrance");
 	var req=opensocial.newDataRequest();
 	var data1=Math.random()*5;
 	var data2=Math.random()*100;
@@ -38,7 +37,7 @@ function requestMyData() {
 	var fields=["AppField1","AppField2","AppField3"];
 	req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
 	alert("3.0");
-	req.add(req.newFetchPersonAppDataRequest("VIEWER", fields), "viewer_data");
+	//req.add(req.newFetchPersonAppDataRequest("VIEWER", fields), "viewer_data");
 	alert("3.1");
 	req.send(handleRequestMyData);
 }
