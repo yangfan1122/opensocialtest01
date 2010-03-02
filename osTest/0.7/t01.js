@@ -37,8 +37,10 @@ gadgets.util.registerOnLoadHandler(populateMyAppData);
      var req = opensocial.newDataRequest();
      var fields = [ "AppField1", "AppField2", "AppField3" ];
      req.add(req.newFetchPersonRequest(opensocial.DataRequest.PersonId.VIEWER), "viewer");
+	 alert(1.1);
      req.add(req.newFetchPersonAppDataRequest("VIEWER", fields), "viewer_data");
-     req.send(handleRequestMyData);
+     alert(1.2);
+	 req.send(handleRequestMyData);
 	 alert(2);
    }
 
