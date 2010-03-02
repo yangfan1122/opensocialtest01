@@ -34,7 +34,7 @@ function handlePopulateMyAppData(data) {
     * Fetch app data
     */
 function requestMyData() {
-	
+	/*
 	var req = opensocial.newDataRequest();
 	var fields = [ "AppField1", "AppField2", "AppField3" ];
 	var p = {};
@@ -45,10 +45,10 @@ function requestMyData() {
 	req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
 	req.add(req.newFetchPersonAppDataRequest(idSpec, fields), "viewer_data");
 	req.send(handleRequestMyData);
+	*/
 
 
-
-	/*
+	
 	var req=opensocial.newDataRequest();
 	var fields=["AppField1","AppField2","AppField3"];
 	req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
@@ -56,7 +56,7 @@ function requestMyData() {
 	req.add(req.newFetchPersonAppDataRequest("VIEWER", fields), "viewer_data");
 	output("3.1");
 	req.send(handleRequestMyData);
-	*/
+	
 
 }
 
