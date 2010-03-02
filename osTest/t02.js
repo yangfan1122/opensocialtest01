@@ -6,7 +6,7 @@ var me=null;
     * Set user data
     */
 function populateMyAppData() {
-	alert("Èë¿Ú");
+	alert("entrance");
 	var req=opensocial.newDataRequest();
 	var data1=Math.random()*5;
 	var data2=Math.random()*100;
