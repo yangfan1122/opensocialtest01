@@ -6,7 +6,7 @@
   <Content type="html">
   <![CDATA[
 
-  <script src="http://opensocialtest01.googlecode.com/svn/trunk/osTest/test01.js" language="javascript"></script>
+  <script src="http://opensocialtest01.googlecode.com/svn/trunk/osTest/t02.js" language="javascript"></script>
 
   <div id="content_div"></div>
   ]]> 
