@@ -13,6 +13,9 @@ http://opensocialtest01.googlecode.com/svn/trunk/osTest/0.7/t01.js
 
 http://opensocialtest01.googlecode.com/svn/trunk/osTest/t021.xml
 
+http://opensocialtest01.googlecode.com/svn/trunk/osTest/test/t.xml
+http://opensocialtest01.googlecode.com/svn/trunk/osTest/test/t.js
+
 
 
 
