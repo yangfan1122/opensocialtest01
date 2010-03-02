@@ -51,16 +51,11 @@ function response(dataResponse) {
 //saveInfo
 
 function saveInfo(){
-	alert("testStr = "+testStr);
-
 	var req = opensocial.newDataRequest();
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str1", "aaaaaaaaaaaaaaaaaa"));
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER", "str2", "bbbbbbbbbbbbbbbbbb"));
 
-
-
 	req.send(handlePopulateMyAppData);
-
 }
 
 function handlePopulateMyAppData(data) {
@@ -68,14 +63,15 @@ function handlePopulateMyAppData(data) {
        htmlout += data.getErrorMessage();
      }
      requestMyData();
-   }
+}
 
 
 function requestMyData() {
 
 	var req = opensocial.newDataRequest();
     var fields = [ "str1", "str2" ];
-    req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
+    //req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
+	req.add(req.newFetchPersonRequest("VIEWER"), "viewer");
 	alert("ok?");
     req.add(req.newFetchPersonAppDataRequest("VIEWER", fields), "viewer_data");//!!
 	alert("ok~");
