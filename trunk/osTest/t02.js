@@ -37,7 +37,7 @@ function requestMyData() {
 	var req=opensocial.newDataRequest();
 	var fields=["AppField1","AppField2","AppField3"];
 	req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
-	output("3.0 "+req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER));
+	output("3.0 "+req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER).name);
 	req.add(req.newFetchPersonAppDataRequest("VIEWER", fields), "viewer_data");
 	output("3.1");
 	req.send(handleRequestMyData);
