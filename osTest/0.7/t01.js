@@ -17,6 +17,7 @@ gadgets.util.registerOnLoadHandler(populateMyAppData);
      htmlout += "Setting AppField3 to " + data3 + "<br />";
      req.add(req.newUpdatePersonAppDataRequest("VIEWER", "AppField3", data3)) + "<br />";
      req.send(handlePopulateMyAppData, "update_appdata");
+	 alert(1);
    }
 
    /************************************************************************
@@ -38,6 +39,7 @@ gadgets.util.registerOnLoadHandler(populateMyAppData);
      req.add(req.newFetchPersonRequest(opensocial.DataRequest.PersonId.VIEWER), "viewer");
      req.add(req.newFetchPersonAppDataRequest("VIEWER", fields), "viewer_data");
      req.send(handleRequestMyData);
+	 alert(2);
    }
 
    /************************************************************************
@@ -54,6 +56,7 @@ gadgets.util.registerOnLoadHandler(populateMyAppData);
      }
      // Do something with the returned data - note the getData call
      doSomethingWithMyData(mydata.getData());
+	 alert(3);
    }
 
    /************************************************************************

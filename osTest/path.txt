@@ -8,6 +8,11 @@ http://opensocialtest01.googlecode.com/svn/trunk/osTest/src/test.swf
 
 
 
+http://opensocialtest01.googlecode.com/svn/trunk/osTest/0.7/t01.xml
+http://opensocialtest01.googlecode.com/svn/trunk/osTest/0.7/t01.js
+
+
+
 
 
 
