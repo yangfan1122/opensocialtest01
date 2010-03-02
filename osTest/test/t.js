@@ -28,7 +28,7 @@ function handleRequestMe(data) {
 
 function doSomethingWithMyData(data) {
      alert("data = "+data);
-   }
+}
 
 
 
