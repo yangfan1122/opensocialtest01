@@ -17,7 +17,7 @@ function populateMyAppData() {
 	htmlout+="Setting AppField3 to "+data3+"<br />";
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER","AppField3",data3))+"<br />";
 	req.send(handlePopulateMyAppData);
-	alert("htmlout = "+htmlout);
+	output(htmlout);
 }
 
 /**
@@ -37,9 +37,9 @@ function requestMyData() {
 	var req=opensocial.newDataRequest();
 	var fields=["AppField1","AppField2","AppField3"];
 	req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
-	alert("3.0");
+	output("3.0");
 	req.add(req.newFetchPersonAppDataRequest("VIEWER", fields), "viewer_data");
-	alert("3.1");
+	output("3.1");
 	req.send(handleRequestMyData);
 }
 
@@ -47,7 +47,7 @@ function requestMyData() {
     * Handle responses from app data requests
     */
 function handleRequestMyData(data) {
-	alert(4);
+	output(4);
 	var mydata=data.get("viewer_data");
 	var viewer=data.get("viewer");
 	me=viewer.getData();
@@ -64,7 +64,7 @@ function handleRequestMyData(data) {
    * Operate on user data
    */
 function doSomethingWithMyData(data) {
-	alert("data = "+data);
+	output("data = "+data);
 	//Data is indexed by user id, and represents an object where keys 
 	//correspond with the app data fields.
 	var mydata=data[me.getId()];
@@ -72,5 +72,15 @@ function doSomethingWithMyData(data) {
 	htmlout+="My AppField1 data is: "+mydata["AppField1"]+"<br />";
 	htmlout+="My AppField2 data is: "+mydata["AppField2"]+"<br />";
 	htmlout+="My AppField3 data is: "+mydata["AppField3"]+"<br />";
-	div.innerHTML=htmlout;
+	//div.innerHTML=htmlout;
+	output(htmlout);
 }
+
+
+function output(str){
+	document.getElementById("content_div").innerHTML += str+"<br /><br /><br />";
+
+}
+
+
+
