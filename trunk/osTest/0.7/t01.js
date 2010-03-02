@@ -24,6 +24,7 @@ gadgets.util.registerOnLoadHandler(populateMyAppData);
     * Handle responses from update person app data requests
     */
    function handlePopulateMyAppData(data) {
+	   alert("11");
      if (data.hadError()) {
        htmlout += data.getError();
      }
