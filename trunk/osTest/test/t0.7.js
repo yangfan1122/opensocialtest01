@@ -13,7 +13,7 @@ function getUrlP() {
 
 	output("~~~~");
 }
-getUrlP();
+//getUrlP();
 
 
 
@@ -28,7 +28,7 @@ var my_params = {
     foo : 12345,
     bar : "Bar value"
 }
-gotoCanvas(my_params);
+//gotoCanvas(my_params);
 
 
 
@@ -50,6 +50,25 @@ function gotoProfile() {
 	navigateTo("profile");
 }
 //gotoProfile();
+
+
+
+
+
+//通过 querystring 将数据传递至应用程序
+var data = { "foo" : 1234554321, "bar" : "Bar value querystring" };
+var json_data = gadgets.json.stringify(data);
+var url_data = encodeURIComponent(json_data);
+function diyAppUrl(){
+	var appUrl = "http://sandbox.orkut.com/Main#Application.aspx?appId="+gadgets.util.getUrlParameters()["gadgetId"]+"&appParams="+url_data;
+	output("url: "+appUrl);
+}
+diyAppUrl();
+
+
+
+
+
 
 
 
