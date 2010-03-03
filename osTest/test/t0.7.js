@@ -6,7 +6,7 @@ function getUrlP() {
 	output(gadgets.util.getUrlParameters()["parent"]);//父网址
 
 	var supported_views = gadgets.views.getSupportedViews();
-	output("supported_views = "+supported_views);
+	output("supported_views['canvas'] = "+supported_views["canvas"]);
 
 
 }
