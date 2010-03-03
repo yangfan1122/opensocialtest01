@@ -28,7 +28,7 @@ var my_params = {
     foo : 12345,
     bar : "Bar value"
 }
-//gotoCanvas(my_params);
+gotoCanvas(my_params);
 
 
 
@@ -60,10 +60,10 @@ var data = { "foo" : 1234554321, "bar" : "Bar value querystring" };
 var json_data = gadgets.json.stringify(data);
 var url_data = encodeURIComponent(json_data);
 function diyAppUrl(){
-	var appUrl = "http://sandbox.orkut.com/Main#Application.aspx?appId="+gadgets.util.getUrlParameters()["gadgetId"]+"&appParams="+url_data;
-	output("url: "+appUrl);
+	var appUrl = "http://sandbox.orkut.com/Main#Application.aspx?appId=" + gadgets.util.getUrlParameters()["gadgetId"] + "&appParams=" + url_data;
+	output("通过url给应用程序传递参数: "+appUrl);
 }
-diyAppUrl();
+//diyAppUrl();
 
 
 
@@ -76,17 +76,14 @@ diyAppUrl();
 if (getViewName()=="canvas") {
 	/* Do canvas specific stuff here */
 	output("in "+getViewName());
-
+	
+	
 	//在画布视图中，检查具有以下代码的值
 	var prefs = gadgets.views.getParams();
 	var foo = prefs["foo"];
-	/* foo contains 12345 */
-
 	var bar = prefs["bar"];
-	/* bar contains "Bar value" */
-	output("foo="+foo+",bar="+bar);
-	output("<br>");
-
+	output("foo="+foo+",bar="+bar+"<br>");
+	
 
 }
 if (getViewName()=="profile") {
