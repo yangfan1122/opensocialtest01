@@ -2,6 +2,13 @@ function getViewName() {
 	return gadgets.views.getCurrentView().getName();
 }
 
+function getUrlP() {
+	output(gadgets.util.getUrlParameters()["parent"]);
+
+}
+getUrlP();
+
+
 if (getViewName()=="canvas") {
 	/* Do canvas specific stuff here */
 	output(getViewName());
