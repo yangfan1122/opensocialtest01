@@ -8,7 +8,7 @@ function getUrlP() {
 	var supported_views = gadgets.views.getSupportedViews();
 	output("supported_views['canvas'] = "+supported_views["canvas"]);
 
-
+	output("~~~~");
 }
 getUrlP();
 
