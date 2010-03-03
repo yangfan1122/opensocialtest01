@@ -1,4 +1,3 @@
-alert("testtttt");
 function getViewName() {
 	return gadgets.views.getCurrentView().getName();
 }
@@ -14,7 +13,7 @@ function getUrlP() {
 
 	output("~~~~");
 }
-//getUrlP();
+getUrlP();
 
 
 
@@ -22,7 +21,7 @@ function getUrlP() {
 
 //通过 requestNavigateTo() 将数据传递至应用程序
 function gotoCanvas(params) {
-	var canvas_view=new gadgets.views.View("canvas");//发送目标
+	var canvas_view=new gadgets.views.View("canvas");//发送到"canvas"视图
 	gadgets.views.requestNavigateTo(canvas_view, params);
 }
 var my_params = {
