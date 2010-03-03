@@ -8,6 +8,9 @@ function getUrlP() {
 	var supported_views = gadgets.views.getSupportedViews();
 	output("supported_views['canvas'] = "+supported_views["canvas"]);
 
+	var application_id = gadgets.util.getUrlParameters()["gadgetId"];//获取应用程序的 ID
+	output("application_id = "+application_id);
+
 	output("~~~~");
 }
 getUrlP();
