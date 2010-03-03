@@ -1,3 +1,4 @@
+alert("testtttt");
 function getViewName() {
 	return gadgets.views.getCurrentView().getName();
 }
