@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+  <ModulePrefs title="test app" > 
+    <Require feature="opensocial-0.7"/>
+  </ModulePrefs>
+  <Content type="html">
+  <![CDATA[
+
+  <script src="http://opensocialtest01.googlecode.com/svn/trunk/osTest/test/t0.7.js" language="javascript"></script>
+
+  <div id="txt"></div>
+  ]]> 
+  </Content>
+</Module>
+
+
+
+
