@@ -2,6 +2,8 @@
 <Module>
   <ModulePrefs title="test app" > 
     <Require feature="opensocial-0.7"/>
+	<Require feature="views" />
+
   </ModulePrefs>
   <Content type="html">
   <![CDATA[
