@@ -13,32 +13,50 @@ function getUrlP() {
 
 	output("~~~~");
 }
-getUrlP();
+//getUrlP();
 
 
 
 
 
 //通过 requestNavigateTo() 将数据传递至应用程序
-  function gotoCanvas(params) {
-    var canvas_view = new gadgets.views.View("canvas");//发送目标
-    gadgets.views.requestNavigateTo(canvas_view, params);
-  };
-
-  var my_params = {
+function gotoCanvas(params) {
+	var canvas_view=new gadgets.views.View("canvas");//发送目标
+	gadgets.views.requestNavigateTo(canvas_view, params);
+}
+var my_params = {
     foo : 12345,
     bar : "Bar value"
-  };
+}
+//gotoCanvas(my_params);
 
-  gotoCanvas(my_params);
 
+
+//浏览至另一个视图
+function navigateTo(dest) {
+	var supported_views=gadgets.views.getSupportedViews();
+	gadgets.views.requestNavigateTo(supported_views[dest]);
+}
+/**
+   * When called, this method asks the container to switch to the canvas
+   */
+function gotoCanvas() {
+	navigateTo("canvas");
+}
+/**
+   * When called, this method asks the container to switch to the profile
+   */
+function gotoProfile() {
+	navigateTo("profile");
+}
+gotoProfile();
 
 
 
 
 if (getViewName()=="canvas") {
 	/* Do canvas specific stuff here */
-	output(getViewName());
+	output("in "+getViewName());
 
 	//在画布视图中，检查具有以下代码的值
 	var prefs = gadgets.views.getParams();
@@ -48,7 +66,7 @@ if (getViewName()=="canvas") {
 	var bar = prefs["bar"];
 	/* bar contains "Bar value" */
 	output("foo="+foo+",bar="+bar);
-
+	output("<br>");
 
 
 }
