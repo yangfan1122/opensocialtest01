@@ -41,8 +41,14 @@ if (getViewName()=="profile") {
   gotoCanvas(my_params);
 
 
+//在画布视图中，检查具有以下代码的值
+var prefs = gadgets.views.getParams();
+  var foo = prefs["foo"];
+  /* foo contains 12345 */
 
-
+  var bar = prefs["bar"];
+  /* bar contains "Bar value" */
+output("foo="+foo+",bar="+bar);
 
 
 
