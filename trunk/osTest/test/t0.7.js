@@ -23,6 +23,7 @@ function getUrlP() {
 function gotoCanvas(params) {
 	var canvas_view=new gadgets.views.View("canvas");//发送到"canvas"视图
 	gadgets.views.requestNavigateTo(canvas_view, params);
+	output("navigate");
 }
 var my_params = {
     foo1 : 12345,
