@@ -70,6 +70,64 @@ function diyAppUrl(){
 
 
 
+//获取用户的 orkut UID
+var getOrkutUid;
+function request() {
+	var req=opensocial.newDataRequest();
+	req.add(req.newFetchPersonRequest("VIEWER"), "viewer");
+	req.send(response);
+}
+function response(data) {
+	var viewer=data.get("viewer").getData();
+	var profile_url=viewer.getField(opensocial.Person.Field.PROFILE_URL);
+	var regex=/uid=([^&#]+)/;
+	var result=profile_url.match(regex);
+	if (result.length==2) {
+		var uid=result[1];
+		/* uid now contains the viewer's orkut UID */
+		getOrkutUid = uid;
+		output("getOrkutUid = "+getOrkutUid);
+	} else {
+		/* there was a problem getting the UID */
+		output("promblem in getUid");
+	}
+}
+request();
+
+
+
+
+
+
+
+//链接到应用程序内的页面
+function makeLink(page, app_id, uid) {
+	return [ gadgets.util.getUrlParameters()["parent"], 
+	             "/Application.aspx?appId=", 
+	             app_id, 
+	             "&uid=",
+	             uid,
+	             "&appParams=%7B%22page%22%3A%22", 
+	             page,
+	             "%22%7D"].join("");
+}
+
+
+/* stored_app_id should be initialized to the application ID - Check the 
+   * "Obtaining the application's ID" section for details on
+   * obtaining this.
+   * stored_uid should be initialized to the user's orkut UID - Note that 
+   * is _not_ the same as the opensocial ID number!  Check the 
+   * "Getting a user's orkut UID" section for details on 
+   * obtaining this. */
+
+var about_url=makeLink("about", gadgets.util.getUrlParameters()["gadgetId"], getOrkutUid);
+output("about_url = "+about_url);
+
+
+
+
+
 
 
 
