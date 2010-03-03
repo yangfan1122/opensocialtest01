@@ -70,34 +70,6 @@ function diyAppUrl(){
 
 
 
-//获取用户的 orkut UID
-var getOrkutUid;
-function request() {
-	var req=opensocial.newDataRequest();
-	req.add(req.newFetchPersonRequest("VIEWER"), "viewer");
-	req.send(response);
-}
-function response(data) {
-	var viewer=data.get("viewer").getData();
-	var profile_url=viewer.getField(opensocial.Person.Field.PROFILE_URL);
-	var regex=/uid=([^&#]+)/;
-	var result=profile_url.match(regex);
-	if (result.length==2) {
-		var uid=result[1];
-		/* uid now contains the viewer's orkut UID */
-		getOrkutUid = uid;
-		output("getOrkutUid = "+getOrkutUid);
-		output("about_url = "+about_url);
-	} else {
-		/* there was a problem getting the UID */
-		output("promblem in getUid");
-	}
-}
-request();
-
-
-
-
 
 
 
@@ -122,7 +94,50 @@ function makeLink(page, app_id, uid) {
    * "Getting a user's orkut UID" section for details on 
    * obtaining this. */
 
-var about_url=makeLink("about", gadgets.util.getUrlParameters()["gadgetId"], getOrkutUid);
+
+
+
+
+
+
+
+
+
+
+
+//获取用户的 orkut UID
+var getOrkutUid;
+function request() {
+	var req=opensocial.newDataRequest();
+	req.add(req.newFetchPersonRequest("VIEWER"), "viewer");
+	req.send(response);
+}
+function response(data) {
+	var viewer=data.get("viewer").getData();
+	var profile_url=viewer.getField(opensocial.Person.Field.PROFILE_URL);
+	var regex=/uid=([^&#]+)/;
+	var result=profile_url.match(regex);
+	if (result.length==2) {
+		var uid=result[1];
+		/* uid now contains the viewer's orkut UID */
+		getOrkutUid = uid;
+		output("getOrkutUid = "+getOrkutUid);
+
+		//链接到应用程序内的页面
+		var about_url=makeLink("about", gadgets.util.getUrlParameters()["gadgetId"], getOrkutUid);
+		output("about_url = "+about_url);
+
+	} else {
+		/* there was a problem getting the UID */
+		output("promblem in getUid");
+	}
+}
+request();
+
+
+
+
+
 
 
 
