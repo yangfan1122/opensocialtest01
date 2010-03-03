@@ -20,7 +20,7 @@ function getUrlP() {
 
 
 //通过 requestNavigateTo() 将数据传递至应用程序
-function gotoCanvas(params) {
+function gotoCanvas1(params) {
 	var canvas_view=new gadgets.views.View("canvas");//发送到"canvas"视图
 	gadgets.views.requestNavigateTo(canvas_view, params);
 }
@@ -28,7 +28,7 @@ var my_params = {
     foo1 : 12345,
     bar1 : "Bar value"
 }
-gotoCanvas(my_params);
+gotoCanvas1(my_params);
 
 
 
