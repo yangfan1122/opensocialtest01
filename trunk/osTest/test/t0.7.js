@@ -29,7 +29,7 @@ var my_params = {
     foo : 12345,
     bar : "Bar value"
 }
-//gotoCanvas(my_params);
+gotoCanvas(my_params);
 
 
 
@@ -50,7 +50,7 @@ function gotoCanvas() {
 function gotoProfile() {
 	navigateTo("profile");
 }
-gotoProfile();
+//gotoProfile();
 
 
 
