@@ -87,6 +87,7 @@ function response(data) {
 		/* uid now contains the viewer's orkut UID */
 		getOrkutUid = uid;
 		output("getOrkutUid = "+getOrkutUid);
+		output("about_url = "+about_url);
 	} else {
 		/* there was a problem getting the UID */
 		output("promblem in getUid");
@@ -122,7 +123,7 @@ function makeLink(page, app_id, uid) {
    * obtaining this. */
 
 var about_url=makeLink("about", gadgets.util.getUrlParameters()["gadgetId"], getOrkutUid);
-output("about_url = "+about_url);
+
 
 
 
