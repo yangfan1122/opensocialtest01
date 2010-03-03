@@ -3,7 +3,7 @@ function getViewName() {
 }
 
 function getUrlP() {
-	output(gadgets.util.getUrlParameters()["parent"]);
+	output(gadgets.util.getUrlParameters()["parent"]);//父网址
 
 }
 getUrlP();
@@ -20,7 +20,7 @@ if (getViewName()=="profile") {
 }
 
 function output(str){
-	document.getElementById("txt").innerHTML += str+"</ br>";
+	document.getElementById("txt").innerHTML += str+"<br />";
 }
 
 //gadgets.util.registerOnLoadHandler(getViewName);
