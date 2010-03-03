@@ -26,6 +26,29 @@ if (getViewName()=="profile") {
 	output(getViewName());
 }
 
+
+//通过 requestNavigateTo() 将数据传递至应用程序
+  function gotoCanvas(params) {
+    var canvas_view = new gadgets.views.View("canvas");
+    gadgets.views.requestNavigateTo(canvas_view, params);
+  };
+
+  var my_params = {
+    foo : 12345,
+    bar : "Bar value"
+  };
+
+  gotoCanvas(my_params);
+
+
+
+
+
+
+
+
+
+
 function output(str){
 	document.getElementById("txt").innerHTML += str+"<br />";
 }
