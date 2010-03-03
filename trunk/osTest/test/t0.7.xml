@@ -5,10 +5,10 @@
   </ModulePrefs>
   <Content type="html">
   <![CDATA[
-
+  <div id="txt"></div>
   <script src="http://opensocialtest01.googlecode.com/svn/trunk/osTest/test/t0.7.js" language="javascript"></script>
 
-  <div id="txt"></div>
+  
   ]]> 
   </Content>
 </Module>
