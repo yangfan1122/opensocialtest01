@@ -25,10 +25,14 @@ function gotoCanvas(params) {
 	gadgets.views.requestNavigateTo(canvas_view, params);
 }
 var my_params = {
-    foo : 12345,
-    bar : "Bar value"
+    foo1 : 12345,
+    bar1 : "Bar value"
 }
 gotoCanvas(my_params);
+
+
+
+
 
 
 
@@ -50,6 +54,8 @@ function gotoProfile() {
 	navigateTo("profile");
 }
 //gotoProfile();
+
+
 
 
 
@@ -132,7 +138,7 @@ function response(data) {
 		output("promblem in getUid");
 	}
 }
-request();
+//request();
 
 
 
@@ -154,8 +160,8 @@ if (getViewName()=="canvas") {
 	
 	//在画布视图中，检查具有以下代码的值
 	var prefs = gadgets.views.getParams();
-	var foo = prefs["foo"];
-	var bar = prefs["bar"];
+	var foo = prefs["foo1"];
+	var bar = prefs["bar1"];
 	output("foo="+foo+",bar="+bar+"<br>");
 	
 
