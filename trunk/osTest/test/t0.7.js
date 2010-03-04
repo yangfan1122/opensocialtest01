@@ -156,7 +156,7 @@ function getData11() {
 }
 function onLoadFriends11(dataResponse) {
 	var viewer=dataResponse.get('viewer').getData();
-	var html='Friends of '+viewer.getId();
+	var html='Friends of '+viewer.getDisplayName();
 	html+=':<br><ul>';
 	var viewerFriends=dataResponse.get('viewerFriends').getData();
 	viewerFriends.each(function(person) {
