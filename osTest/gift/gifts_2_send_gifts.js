@@ -4,7 +4,7 @@ var globalGiftList=['a cashew nut','a peanut','a hazelnut','a red pistachio nut'
 function giveGift() {
 	var nut=document.getElementById('nut').value;
 	var friend=document.getElementById('person').value;
-	alert("friend="+friend);
+	alert("friend="+friend+" , nut="+nut);
 	givenGifts[friend]=nut;
 	var json=gadgets.json.stringify(givenGifts);
 
