@@ -1,4 +1,3 @@
-alert("tteesstt");
 function loadFriends() {
 	var req=opensocial.newDataRequest();
 	req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), 'viewer');
