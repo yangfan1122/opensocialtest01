@@ -10,7 +10,7 @@
         Your friends:
         <div id='friends'></div>
       </div>
-	  <script type="text/javascript" src="gifts_1_friends.js"></script>
+	  <script type="text/javascript" src="http://opensocialtest01.googlecode.com/svn/trunk/osTest/gift/gifts_1_friends.js"></script>
     ]]>
   </Content>
 </Module>
