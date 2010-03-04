@@ -28,7 +28,7 @@ var my_params = {
     foo1 : 12345,
     bar1 : "Bar value"
 }
-gotoCanvas1(my_params);
+//gotoCanvas1(my_params);
 
 
 
@@ -144,6 +144,29 @@ function response(data) {
 
 
 
+
+
+//获取个人信息
+//CURRENT_LOCATION 
+function getData11() {
+	var req=opensocial.newDataRequest();
+	req.add(req.newFetchPersonRequest(opensocial.DataRequest.PersonId.VIEWER), 'viewer');
+	req.add(req.newFetchPeopleRequest(opensocial.DataRequest.Group.VIEWER_FRIENDS), 'viewerFriends');
+	req.send(onLoadFriends11);
+}
+function onLoadFriends11(dataResponse) {
+	var viewer=dataResponse.get('viewer').getData();
+	var html='Friends of '+viewer.getDisplayName();
+	html+=':<br><ul>';
+	var viewerFriends=dataResponse.get('viewerFriends').getData();
+	viewerFriends.each(function(person) {
+	      html += '<li>' + person.getDisplayName() + '</li>';
+	    });
+	html+='</ul>';
+	output(html);
+}
+
+getData11();
 
 
 
