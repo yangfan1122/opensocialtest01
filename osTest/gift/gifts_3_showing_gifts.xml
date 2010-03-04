@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+  <ModulePrefs title="Gifts part 3 - Showing Gifts">
+    <Require feature="opensocial-0.8"/>
+  </ModulePrefs>
+  <Content type="html">
+    <![CDATA[
+      <div id='main'>
+        <div id='give'>
+          <form id='gift_form'>
+            Give <span id='gifts'></span> to <span id='friends'></span>. <a href='javascript:void(0);' onclick='giveGift();'>Give!</a>
+          </form>
+        </div>
+        <div id='given'></div>
+      </div>
+	  <script type="text/javascript" src="http://opensocialtest01.googlecode.com/svn/trunk/osTest/gift/gifts_3_showing_gifts.js"></script>
+    ]]>
+  </Content>
+</Module>

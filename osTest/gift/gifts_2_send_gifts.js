@@ -2,14 +2,14 @@ var givenGifts={};
 var globalGiftList=['a cashew nut','a peanut','a hazelnut','a red pistachio nut'];
 
 function giveGift() {
-	var nut=document.getElementById('nut').value;
+	var nut=document.getElementById('nut').value;//已选中的option的值   礼物序号
 	var friend=document.getElementById('person').value;
-	alert("friend="+friend+" , nut="+nut);
-	givenGifts[friend]=nut;
-	var json=gadgets.json.stringify(givenGifts);
+	//alert("friend="+friend+" , nut="+nut);
+	givenGifts[friend]=nut;// 人id, 礼物序号
+	var json=gadgets.json.stringify(givenGifts);//将 JavaScript 值转换为 JSON 字符串。 
 
 	var req=opensocial.newDataRequest();
-	req.add(req.newUpdatePersonAppDataRequest("VIEWER", 'gifts', json));
+	req.add(req.newUpdatePersonAppDataRequest("VIEWER", 'gifts', json));//newUpdatePersonAppDataRequest 创建项目以请求更新指定用户的应用程序域。处理后，不返回任何数据。
 	req.send();
 }
 
