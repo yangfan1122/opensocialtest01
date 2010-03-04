@@ -170,7 +170,7 @@ getData11();
 
 
 
-
+output("CURRENT_LOCATION="+CURRENT_LOCATION);
 
 
 
