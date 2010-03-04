@@ -22,7 +22,7 @@ function onLoadFriends(data) {
 	            }
 	          });
 	html.push('</ul>');
-	alert("html = "+html);
+	alert("viewer.getDisplayName() = "+viewer.getDisplayName());
 	document.getElementById('friends').innerHTML=html.join('');
 	gadgets.window.adjustHeight();
 }
