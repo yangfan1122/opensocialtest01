@@ -1,23 +1,11 @@
-http://opensocialtest01.googlecode.com/svn/trunk/osTest/test01.xml
-
-http://opensocialtest01.googlecode.com/svn/trunk/osTest/test01.js
-
 http://opensocialtest01.googlecode.com/svn/trunk/osTest/swfobject.js
-
 http://opensocialtest01.googlecode.com/svn/trunk/osTest/src/test.swf
 
 
 
-http://opensocialtest01.googlecode.com/svn/trunk/osTest/0.7/t01.xml
-http://opensocialtest01.googlecode.com/svn/trunk/osTest/0.7/t01.js
 
-http://opensocialtest01.googlecode.com/svn/trunk/osTest/t021.xml
-
-http://opensocialtest01.googlecode.com/svn/trunk/osTest/test/t0.7.xml
-http://opensocialtest01.googlecode.com/svn/trunk/osTest/test/t0.7.js
-
-http://opensocialtest01.googlecode.com/svn/trunk/osTest/test/gift0.8.xml
-
+http://opensocialtest01.googlecode.com/svn/trunk/osTest/gift/gifts_1_friends.xml
+http://opensocialtest01.googlecode.com/svn/trunk/osTest/gift/gifts_1_friends.js
 
 
 
