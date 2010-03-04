@@ -16,6 +16,8 @@ http://opensocialtest01.googlecode.com/svn/trunk/osTest/t021.xml
 http://opensocialtest01.googlecode.com/svn/trunk/osTest/test/t0.7.xml
 http://opensocialtest01.googlecode.com/svn/trunk/osTest/test/t0.7.js
 
+http://opensocialtest01.googlecode.com/svn/trunk/osTest/test/gift0.8.xml
+
 
 
 

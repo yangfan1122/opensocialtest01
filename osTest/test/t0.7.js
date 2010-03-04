@@ -147,7 +147,6 @@ function response(data) {
 
 
 //获取个人信息
-//CURRENT_LOCATION 
 function getData11() {
 	var req=opensocial.newDataRequest();
 	req.add(req.newFetchPersonRequest(opensocial.DataRequest.PersonId.VIEWER), 'viewer');
@@ -166,11 +165,11 @@ function onLoadFriends11(dataResponse) {
 	output(html);
 }
 
-getData11();
+//getData11();
 
 
 
-output("CURRENT_LOCATION="+CURRENT_LOCATION);
+
 
 
 
