@@ -18,8 +18,7 @@ function onLoadFriends(data) {
 	html.push('<li>viewer name:'+viewer.getDisplayName()+'</li>');
 	html.push('<ul>');
 	viewerFriends.each(function(person) {
-				alert("person.getId()="+person.getId());
-	            if (person.getId()) {
+	            if (person.getId()) {//The simple check for person.getId() assures that only mutual friends are loaded.
 	              html.push('<li>', person.getDisplayName(), '</li>');
 	            }
 	          });
