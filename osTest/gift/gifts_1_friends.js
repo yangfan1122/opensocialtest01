@@ -15,7 +15,7 @@ function onLoadFriends(data) {
 	var viewerFriends=data.get('viewerFriends').getData();
 
 	html = new Array();
-	html.push('<ul>viewer name:<li>'+viewer.getDisplayName()+'</li></ul>');
+	html.push('<li>viewer name:'+viewer.getDisplayName()+'</li>');
 	html.push('<ul>');
 	viewerFriends.each(function(person) {
 	            if (person.getId()) {
