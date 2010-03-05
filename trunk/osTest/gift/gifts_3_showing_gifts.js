@@ -30,6 +30,7 @@ function updateGiftList(viewer, data, friends) {
 }
 
 function giveGift() {
+	alert("click?");
 	var nut=document.getElementById('nut').value;
 	var friend=document.getElementById('person').value;
 
