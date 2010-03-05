@@ -19,6 +19,7 @@ function updateGiftList(viewer, data, friends) {
 	var html = new Array();
 	html.push('You have given:');
 	html.push('<ul>');
+	html.push('here?');
 	for (i in givenGifts) {
 		if (i.hasOwnProperty) {
 			html.push('<li>', friends.getById(i).getDisplayName(), ' received ', globalGiftList[givenGifts[i]], '</li>');
