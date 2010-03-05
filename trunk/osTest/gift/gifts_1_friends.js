@@ -4,7 +4,7 @@ function loadFriends() {
 
 	var viewerFriends=opensocial.newIdSpec({"userId":"VIEWER","groupId":"FRIENDS"});
 	var opt_params={};
-	opt_params[opensocial.DataRequest.PeopleRequestFields.MAX]=100;
+	opt_params[opensocial.DataRequest.PeopleRequestFields.MAX]=100;//要获取的最大项目数
 	req.add(req.newFetchPeopleRequest(viewerFriends, opt_params), 'viewerFriends');
 
 	req.send(onLoadFriends);
