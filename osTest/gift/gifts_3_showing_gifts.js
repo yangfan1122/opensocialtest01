@@ -47,6 +47,7 @@ function giveGift() {
 
 	var viewer=opensocial.newIdSpec({"userId":"VIEWER"});
 	req.add(req.newFetchPersonAppDataRequest(viewer, 'gifts'), 'data');
+	alert("giveGift end?");
 	req.send(onLoadFriends);
 }
 
