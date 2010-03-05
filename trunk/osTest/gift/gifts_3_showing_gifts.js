@@ -35,19 +35,19 @@ function giveGift() {
 
 	givenGifts[friend]=nut;
 	var json=gadgets.json.stringify(givenGifts);
-
+	alert("giveGift 1?");
 	var req=opensocial.newDataRequest();
 	req.add(req.newUpdatePersonAppDataRequest("VIEWER", 'gifts', json));
 	req.add(req.newFetchPersonRequest("VIEWER"), 'viewer');
-
+	alert("giveGift 2?");
 	var viewerFriends=opensocial.newIdSpec({"userId":"VIEWER","groupId":"FRIENDS"});
 	var opt_params={};
 	opt_params[opensocial.DataRequest.PeopleRequestFields.MAX]=100;
 	req.add(req.newFetchPeopleRequest(viewerFriends, opt_params), 'viewerFriends');
-
+	alert("giveGift 3?");
 	var viewer=opensocial.newIdSpec({"userId":"VIEWER"});
 	req.add(req.newFetchPersonAppDataRequest(viewer, 'gifts'), 'data');
-	alert("giveGift end?");
+	alert("giveGift 4?");
 	req.send(onLoadFriends);
 }
 
