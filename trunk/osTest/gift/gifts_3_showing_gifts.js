@@ -30,7 +30,6 @@ function updateGiftList(viewer, data, friends) {
 }
 
 function giveGift() {
-	alert("click?");
 	var nut=document.getElementById('nut').value;
 	var friend=document.getElementById('person').value;
 
@@ -49,7 +48,6 @@ function giveGift() {
 	var viewer=opensocial.newIdSpec({"userId":"VIEWER"});
 	req.add(req.newFetchPersonAppDataRequest(viewer, 'gifts'), 'data');
 	req.send(onLoadFriends);
-	alert("click end?");
 }
 
 function makeOptionsMenu() {
@@ -73,6 +71,7 @@ function loadFriends() {
 
 	var viewer=opensocial.newIdSpec({"userId":"VIEWER"});
 	req.add(req.newFetchPersonAppDataRequest(viewer, 'gifts', opt_params), 'data');
+	alert("刷新朋友列表");
 	req.send(onLoadFriends);
 }
 
