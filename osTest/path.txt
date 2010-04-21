@@ -8,6 +8,11 @@ http://opensocialtest01.googlecode.com/svn/trunk/osTest/gift/gifts_1_friends.xml
 http://opensocialtest01.googlecode.com/svn/trunk/osTest/gift/gifts_1_friends.js
 
 
+http://www.zdface.com/html/NewShow_266560_1.htm
+http://v1.zdface.com/2010/ouguan100421A.wmv
+http://v1.zdface.com/2010/ouguan100421B.wmv
+
+
 
 
 
