@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import "style.css";
+
+.head_table1{
+	width:962px;
+}
+.head_td1{
+	height:65px;
+	vertical-align:top;	
+}
+.head_td2{
+	height:42px;
+}
+.head_td3{
+	background-image:url(../images/index_05.gif);
+	width:10px;
+	height:42px;
+}
+.head_td4{
+	background-image:url(../images/index_11.gif);
+	width:10px;
+	height:42px;
+}
+.head_td5{
+	background-image:url(../images/index_06.gif);
+	width:942px;
+	height:42px;
+}
+.head_td5 a:link {color:#fff;text-decoration:none; font-size:16px; font-weight:bold;}
+.head_td5 a:visited {color:#fff; text-decoration:none; font-size:16px; font-weight:bold;}
+.head_td5 a:hover {color:#fff; text-decoration:underline; font-size:16px; font-weight:bold;}
+.head_td5 a:active {color:#fff; text-decoration:underline; font-size:16px; font-weight:bold;}
+
+.head_td6 {
+	padding-left:30px;
+	padding-right:30px;
+}
+.head_td7 {
+	width:4px;
+}
+.head_td8 {
+	text-align:right;
+	color:#fff;
+}
+.head_td8 a:link {color:#fff;text-decoration:none; font-size:12px; font-weight:normal;}
+.head_td8 a:visited {color:#fff; text-decoration:none; font-size:12px; font-weight:normal;}
+.head_td8 a:hover {color:#fff; text-decoration:underline; font-size:12px; font-weight:normal;}
+.head_td8 a:active {color:#fff; text-decoration:underline; font-size:12px; font-weight:normal;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
