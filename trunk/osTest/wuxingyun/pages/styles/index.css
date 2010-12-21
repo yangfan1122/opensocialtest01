@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import "style.css";
+
+.index_div1{
+	width:962px;
+	margin:0px auto 0px auto;
+	vertical-align:top;
+}
+
+.index_table1{
+	width:962px;
+	margin-top:5px;
+}
+.index_table2{
+	width:210px;
+	height:399px;
+	background-image:url(../images/index_13.gif);
+}
+
+.index_td1{
+	width:50%;
+}
+.index_td2{
+	width:50%;
+	height:100%;
+	text-align:right;
+}
+.index_td3{
+	height:25px;
+	color:#093042;
+	font-weight:bold;
+	padding:4px 0px 0px 15px;
+}
+.index_td4{
+	height:25px;
+	text-align:right;	
+	padding:4px 15px 0px 0px;
+}
+
+
