@@ -21,11 +21,13 @@
 
 .index_td1{
 	width:50%;
+	padding-left:5px;
 }
 .index_td2{
 	width:50%;
 	height:100%;
 	text-align:right;
+	padding-right:5px;
 }
 .index_td3{
 	height:25px;
@@ -38,5 +40,28 @@
 	text-align:right;	
 	padding:4px 15px 0px 0px;
 }
+.index_td5{
+	vertical-align:top;
+}
+.index_td5 div{
+	margin:15px 0px 0px 15px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
