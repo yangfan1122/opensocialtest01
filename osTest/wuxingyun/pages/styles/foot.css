@@ -1,0 +1,13 @@
+/* CSS Document */
+@import "style.css";
+
+.foot_table1{
+	width:962px;
+	height:40px;
+	background-color:#f4f4f4;
+	text-align:center;
+}
+.foot_table1 a:link {color:#093042;text-decoration:none; font-size:12px; font-weight:normal;}
+.foot_table1 a:visited {color:#093042; text-decoration:none; font-size:12px; font-weight:normal;}
+.foot_table1 a:hover {color:#093042; text-decoration:underline; font-size:12px; font-weight:normal;}
+.foot_table1 a:active {color:#093042; text-decoration:underline; font-size:12px; font-weight:normal;}
