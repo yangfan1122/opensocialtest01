@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Geolocation实例: google maps js api</title>
+<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="http://code.google.com/apis/gears/gears_init.js"></script>
+<script type="text/javascript">
+var map;
+var infowindow = new google.maps.InfoWindow  ;
+var initialLocation;
+var errorContentString;
+var siberia = new google.maps.LatLng(60,105);
+var newyork = new google.maps.LatLng(40.69847032728747,-73.9514422416687);
+var browserSupportFlag = new Boolean  ;
+
+function initialize()
+{
+	var myOptions = {zoom:8,mapTypeId:google.maps.MapTypeId.ROADMAP};
+	map = new google.maps.Map(document.getElementById("map_canvas"),myOptions);
+	if (navigator.geolocation)
+	{
+		browserSupportFlag = true;
+		navigator.geolocation.getCurrentPosition(updateLocation, function(error){handleNoGeolocation(browserSupportFlag); alert("error "+error.code+": "+error.message);});
+	}
+	else
+	{
+		browserSupportFlag = false;
+		handleNoGeolocation(browserSupportFlag);
+	}
+}
+
+/**
+ *	成功
+ */
+function updateLocation(position)
+{
+	initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+	map.setCenter(initialLocation);
+	infowindow.setContent("Location found.");
+	infowindow.setPosition(initialLocation);
+	infowindow.open(map);
+}
+/**
+ *	失败
+ */
+function handleNoGeolocation(errorFlag)
+{
+	if (errorFlag == true)
+	{
+		initialLocation = newyork;
+		errorContentString = "Error: The Geolocation service failed.";
+	}
+	else
+	{
+		initialLocation = siberia;
+		errorContentString = "Error: Your browser doesn't support geolocation.";
+	}
+	map.setCenter(initialLocation);
+	infowindow.setContent(errorContentString);
+	infowindow.setPosition(initialLocation);
+	infowindow.open(map);
+}
+</script>
+</head>
+<body onload="initialize()">
+<div id="map_canvas"></div>
+</body>
+</html>
