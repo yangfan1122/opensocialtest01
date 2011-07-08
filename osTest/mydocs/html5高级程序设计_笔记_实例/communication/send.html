@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>send</title>
+</head>
+
+<body>
+<script>
+var targetOrigin = "http://172.21.39.116:8080";
+
+function loadDemo()
+{
+	if (typeof window.postMessage === undefined)
+	{
+		alert("不支持postMessage");
+	}
+	else
+	{
+		document.getElementById("actionButton").addEventListener("click", actionButtonHandler, true);
+	}
+}
+function actionButtonHandler()
+{
+	sendString(document.getElementById("messageText").value);
+}
+function sendString(s) 
+{
+	document.getElementById("widget").contentWindow.postMessage(s, targetOrigin);
+}
+function messageHandler(e)
+{
+    if (e.origin == targetOrigin) 
+	{
+		alert("e.data="+e.data);
+    } 
+	else 
+	{
+		alert("ignore messages from other origins");
+    }
+}
+window.addEventListener("load",loadDemo,true);
+window.addEventListener("message", messageHandler, true);
+</script>
+<div>
+  <input type="text" id="messageText" value="随便写点嘛~" />
+  <br />
+  <button id="actionButton">submit</button>
+</div>
+<iframe id="widget" src="http://172.21.39.116:8080/videotest/t/receive.html"></iframe>
+</body>
+</html>
