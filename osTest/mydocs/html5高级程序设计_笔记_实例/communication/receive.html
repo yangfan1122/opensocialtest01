@@ -24,7 +24,7 @@ function messageHandler(e)
     if (e.origin === targetOrigin)
 	{
 		alert("messageHandler : e.data="+e.data);
-		sendString("return "+e.data);
+		sendString("来自receive的返回 // "+e.data);
     } 
 	else
 	{
@@ -40,10 +40,7 @@ window.addEventListener("load", loadDemo, true);
 </script>
 
 <input type="text" id="statusText" value="receive" /><br/>
-<!--
-<button id="sendButton">Change Status</button><br/>
-<button id="stopButton">Stop Blinking Title</button>
--->
+
 
 </body>
 </html>

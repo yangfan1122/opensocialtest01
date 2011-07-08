@@ -17,6 +17,12 @@ function loadDemo()
 	}
 	else
 	{
+		for(var i in window)
+		{
+			document.getElementById("test").innerHTML += i+":"+window[i]+"</br>-----------</br>";
+		}
+		
+		
 		document.getElementById("actionButton").addEventListener("click", actionButtonHandler, true);
 	}
 }
@@ -32,7 +38,7 @@ function messageHandler(e)
 {
     if (e.origin == targetOrigin) 
 	{
-		alert("e.data="+e.data);
+		alert(e.data);
     } 
 	else 
 	{
@@ -47,6 +53,9 @@ window.addEventListener("message", messageHandler, true);
   <br />
   <button id="actionButton">submit</button>
 </div>
+<br />
 <iframe id="widget" src="http://172.21.39.116:8080/videotest/t/receive.html"></iframe>
+<br />
+<div id="test"></div>
 </body>
 </html>
