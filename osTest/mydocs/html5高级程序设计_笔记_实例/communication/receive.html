@@ -12,7 +12,7 @@ http://test1.myyule.com.cn:8089/template/yf/test/communication/send.html
 http://172.21.39.116:8080/videotest/t/receive.html
 */
 
-var targetOrigin = "http://test1.myyule.com.cn:8089";//注意最后不能有有“/”
+var targetOrigin = "http://test1.myyule.com.cn:8089";//注意最后不能有有“/”， //白名单
 
 function sendString(s)
 {
@@ -23,8 +23,8 @@ function messageHandler(e)
 {
     if (e.origin === targetOrigin)
 	{
-		alert("messageHandler : e.data="+e.data);
-		sendString("来自receive的返回 // "+e.data);
+		statusText.value = "来自"+targetOrigin+"的消息："+e.data;
+		sendString("来自receive.html的返回: "+e.data);
     } 
 	else
 	{
@@ -38,8 +38,7 @@ function loadDemo()
 window.addEventListener("load", loadDemo, true);
 
 </script>
-
-<input type="text" id="statusText" value="receive" /><br/>
+<input type="text" style="width:500px;" id="statusText" value="" /><br/>
 
 
 </body>

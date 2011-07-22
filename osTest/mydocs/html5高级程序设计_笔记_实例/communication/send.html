@@ -7,7 +7,14 @@
 
 <body>
 <script>
-var targetOrigin = "http://172.21.39.116:8080";
+/*
+两种情况使用postMessage
+1.内嵌iframe
+2.window.open
+*/
+
+
+var targetOrigin = "http://172.21.39.116:8080";//白名单
 
 function loadDemo()
 {
@@ -17,16 +24,21 @@ function loadDemo()
 	}
 	else
 	{
-	/*
-		for(var i in window)
-		{
-			document.getElementById("test").innerHTML += i+":"+window[i]+"</br>-----------</br>";
-		}
-	*/	
-		
 		document.getElementById("actionButton").addEventListener("click", actionButtonHandler, true);
+		document.getElementById("actionButtonNew").addEventListener("click", actionButtonHandlerNew, true);
 	}
 }
+
+
+
+
+
+
+
+/**
+ *	iframe
+ *
+ */
 function actionButtonHandler()
 {
 	sendString(document.getElementById("messageText").value);
@@ -48,15 +60,70 @@ function messageHandler(e)
 }
 window.addEventListener("load",loadDemo,true);
 window.addEventListener("message", messageHandler, true);
+
+
+
+
+
+
+
+
+
+/**
+ *	新窗口打开
+ *
+ */
+var newWindow;
+function openWin()
+{
+	document.getElementById("newWinBtn").disabled = true;
+	newWindow = window.open(document.getElementById("widget").src, "_blank", "height=200,width=600");
+}
+function actionButtonHandlerNew()
+{
+	sendString_newWindow(document.getElementById("messageTextNewWindow").value);
+}
+function sendString_newWindow(s) 
+{
+	try
+	{
+		newWindow.postMessage(s, targetOrigin);
+	}
+	catch (e)
+	{
+		alert(e);
+	}
+}
+
+
 </script>
+
+
+
+------------------------------ 1.iframe ------------------------------------------------------------<br /><br />
+<iframe id="widget" style="width:600px;" src="http://172.21.39.116:8080/videotest/t/receive.html"></iframe><br />
 <div>
-  <input type="text" id="messageText" value="随便写点嘛~" />
-  <br />
+  步骤1：<input type="text" id="messageText" value="在这随便写点嘛~" />
   <button id="actionButton">submit</button>
 </div>
+
+
+
+
+<br /><br /><br />
+
+
+
+
+------------------------------ 2.window.open ------------------------------------------------------------<br /><br />
+步骤1：<input type="button" id="newWinBtn" value="打开新窗口" onclick="openWin();" />
 <br />
-<iframe id="widget" src="http://172.21.39.116:8080/videotest/t/receive.html"></iframe>
-<br />
+
+步骤2：<input type="text" id="messageTextNewWindow" value="在这随便写点嘛~" />
+<button id="actionButtonNew">submit</button><br />
+
+
+
 <div id="test"></div>
 </body>
 </html>
