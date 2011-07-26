@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>check websocket</title>
+</head>
+
+<body>
+<div id="test"></div>
+<script>
+// http://test1.myyule.com.cn:8089/template/yf/test/WebSocket/check_websocket.html
+if(window.WebSocket)
+{
+	document.getElementById("test").innerHTML = "window.WebSocket = "+window.WebSocket+"<br><br> websocket is supported";
+}
+else
+{
+	document.getElementById("test").innerHTML = "window.WebSocket="+window.WebSocket+"<br><br> websocket is not supported";
+}
+</script>
+
+</body>
+</html>
