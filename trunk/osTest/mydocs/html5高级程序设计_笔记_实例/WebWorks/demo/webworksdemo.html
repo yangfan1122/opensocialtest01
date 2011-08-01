@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WebWorkers demo</title>
+</head>
+
+<body>
+
+进程数:<input id="worker" type="text" value="" /><br>
+计算数值:<input id="input" type="text" value="" /><br>
+<button id="helloButton" >Start</button>&nbsp;&nbsp;
+<button id="stopButton" >Stop Task</button>
+
+<br><br><br><br>
+
+<b>console:</b><button id="clear" >clear console</button>
+<div id="console"/>
+
+
+
+
+
+<script>
+//http://test1.myyule.com.cn:8089/template/yf/test/WebWorks/demo/webworksdemo.html
+var src = "demo.js";
+var workers = [];
+
+function stopWorker()
+{
+	for(var i in workers)
+	{
+		workers[i].terminate();
+	}
+	console.log("all killed");
+	test("all killed");
+}
+
+/**
+ * 监听worker的返回
+ * @param	e
+ */
+function messageHandler(e)
+{
+	console.log("messageHandler: "+e.data);
+	test("messageHandler: "+e.data);
+}
+
+function errorHandler(e)
+{
+	console.log(e.message, e);
+	test(e.message, e);
+}
+
+
+function workerinit(_src)
+{
+	var worker = new Worker(_src);
+	worker.addEventListener("message", messageHandler, true);
+	worker.addEventListener("error", errorHandler, true);
+	return worker;
+}
+function init(_num)
+{
+	var temp = document.getElementById("worker").value;//进程数
+	if(IsNum(temp))
+	{
+		while(temp--)
+		{
+			var worker = workerinit(src);
+			workers.push(worker);
+			worker.postMessage(_num);
+		}
+	}
+	else
+	{
+		alert("输入框里只能填数字！");
+	}
+}
+
+function loadDemo()
+{
+	if (typeof(Worker) !== "undefined")
+	{
+		//点击start
+		document.getElementById("helloButton").onclick = function()
+		{
+			var temp = document.getElementById("input").value;//用于计算的数值
+			if(IsNum(temp))
+			{
+				init(temp);
+			}
+			else
+			{
+				alert("输入框里只能填数字！");
+			}
+		}
+
+		document.getElementById("stopButton").onclick = stopWorker;
+		document.getElementById("clear").onclick = clear;
+	}
+	else
+	{
+		alert("dose supports HTML5 Web Workers");
+	}
+
+}
+
+/**
+ * 判断是否为数字
+ * @param	s
+ */
+function IsNum(s)
+{
+    if (s!=null && s!="")
+    {
+        return !isNaN(s);
+    }
+    return false;
+}
+
+/**
+ * 测试输出
+ * @param	s
+ */
+function test(s)
+{
+	document.getElementById("console").innerHTML += s+"<br>-------------<br>"
+}
+function clear()
+{
+document.getElementById("console").innerHTML = "";
+}
+
+
+window.addEventListener("load", loadDemo, true);
+</script>
+
+
+
+</body>
+</html>
