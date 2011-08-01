@@ -42,8 +42,8 @@ function stopWorker()
  */
 function messageHandler(e)
 {
-	console.log("messageHandler: "+e.data);
-	test("messageHandler: "+e.data);
+	console.log(e.data);
+	test(e.data);
 }
 
 function errorHandler(e)
