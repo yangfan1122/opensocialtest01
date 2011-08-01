@@ -69,7 +69,7 @@ function init(_num)
 		{
 			var worker = workerinit(src);
 			workers.push(worker);
-			worker.postMessage(_num);
+			worker.postMessage(_num);//处理任务
 		}
 	}
 	else
