@@ -1,3 +1,7 @@
+/**
+ * WebWorkers js
+ */
+
 function messageHandler(e)
 {
 	var _eNum = e.data;
