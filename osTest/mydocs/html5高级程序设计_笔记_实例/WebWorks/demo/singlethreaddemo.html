@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Single Thread demo</title>
+</head>
+
+<body>
+<h2>Single Thread demo</h2>
+执行次数:<input id="counter" type="text" value="100" /><br>
+计算数值:<input id="input" type="text" value="100" /><br>
+<button id="helloButton" >Start</button>&nbsp;&nbsp;
+
+<br><br><br><br>
+
+<b>console:</b><button id="clear" >clear console</button>
+<div id="console"/>
+
+
+
+
+<script src="js.js"></script>
+<script>
+//http://test1.myyule.com.cn:8089/template/yf/test/WebWorks/demo/singlethreaddemo.html
+
+/**
+ *	单线程例子
+ *	
+ *	
+ *
+ *	
+ */
+
+var number;//累加的数
+var counter;//执行次数
+var time1;
+var time2;
+
+function loadDemo()
+{
+	number = document.getElementById("input").value;
+	counter = document.getElementById("counter").value;
+
+	if(IsNum(number))
+	{
+		document.getElementById("helloButton").onclick = function()
+		{
+			time1 = getTime();
+			while(counter--)
+			{
+				test("result:"+doIt(number)+"; counter="+counter);
+				if(counter==0)
+				{
+					time2 = getTime();
+					alert("Done! It takes broweser "+(time2-time1)+"ms to do it~");
+				}
+			}
+		}
+
+		document.getElementById("clear").onclick = clear;
+	}
+	else
+	{
+		alert("输入框里只能填数字！");
+	}
+}
+function doIt(_num)
+{
+	var temp=0;
+	while(_num)
+	{
+		temp += _num--;
+	}
+	return temp;
+}
+
+window.addEventListener("load", loadDemo, true);
+</script>
+
+
+
+</body>
+</html>

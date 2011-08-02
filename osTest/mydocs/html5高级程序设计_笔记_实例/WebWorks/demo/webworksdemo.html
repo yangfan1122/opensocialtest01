@@ -6,10 +6,11 @@
 </head>
 
 <body>
+<h2>WebWorkers demo</h2>
 
-进程数:<input id="worker" type="text" value="" /><br>
-计算数值:<input id="input" type="text" value="" /><br>
-<button id="helloButton" >Start</button>&nbsp;&nbsp;
+线程数:<input id="worker" type="text" value="100" /><br>
+计算数值:<input id="input" type="text" value="100" /><br>
+<button id="startButton" >Start</button>&nbsp;&nbsp;
 <button id="stopButton" >Stop Task</button>
 
 <br><br><br><br>
@@ -20,11 +21,23 @@
 
 
 
-
+<script src="js.js"></script>
 <script>
 //http://test1.myyule.com.cn:8089/template/yf/test/WebWorks/demo/webworksdemo.html
+
+/**
+ *	chromium、opera只能执行16个线程
+ *	200个线程累加2，safari比ff执行的快，但到400线程累加2的时候就挂了
+ *	
+ *	小数据量单线程处理比webworkers快很多，大数据量会提示终止脚本；webworkers不会，但仍需很长时间处理
+ *	
+ */
+
 var src = "demo.js";
 var workers = [];
+var thread=0;//输入的线程数
+var time1;
+var time2;
 
 function stopWorker()
 {
@@ -42,8 +55,15 @@ function stopWorker()
  */
 function messageHandler(e)
 {
+	thread--;
 	console.log(e.data);
-	test(e.data);
+	test(e.data+"; counter="+thread);
+
+	if(thread==0)
+	{
+		time2 = getTime();
+		alert("Done! It takes broweser "+(time2-time1)+"ms to do it~");
+	}
 }
 
 function errorHandler(e)
@@ -62,9 +82,10 @@ function workerinit(_src)
 }
 function init(_num)
 {
-	var temp = document.getElementById("worker").value;//进程数
+	var temp = document.getElementById("worker").value;//线程数
 	if(IsNum(temp))
 	{
+		thread = temp;
 		while(temp--)
 		{
 			var worker = workerinit(src);
@@ -83,8 +104,10 @@ function loadDemo()
 	if (typeof(Worker) !== "undefined")
 	{
 		//点击start
-		document.getElementById("helloButton").onclick = function()
+		document.getElementById("startButton").onclick = function()
 		{
+			time1 = getTime();
+
 			var temp = document.getElementById("input").value;//用于计算的数值
 			if(IsNum(temp))
 			{
@@ -105,33 +128,6 @@ function loadDemo()
 	}
 
 }
-
-/**
- * 判断是否为数字
- * @param	s
- */
-function IsNum(s)
-{
-    if (s!=null && s!="")
-    {
-        return !isNaN(s);
-    }
-    return false;
-}
-
-/**
- * 测试输出
- * @param	s
- */
-function test(s)
-{
-	document.getElementById("console").innerHTML += s+"<br>-------------<br>"
-}
-function clear()
-{
-document.getElementById("console").innerHTML = "";
-}
-
 
 window.addEventListener("load", loadDemo, true);
 </script>
