@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>check webstorage</title>
+</head>
+
+<body>
+<div id="test" />
+<script>
+// http://test1.myyule.com.cn:8089/template/yf/test/WebStorage/check_webstorage.html
+if(window.sessionStorage)
+{
+	document.getElementById("test").innerHTML += "supports sessionStorage<br>-------------<br>";
+}
+else
+{
+	document.getElementById("test").innerHTML += "dose NOT supports sessionStorage<br>-------------<br>";
+}
+
+if(window.localStorage)
+{
+	
+	document.getElementById("test").innerHTML += "supports localStorage<br>-------------<br>";
+}
+else
+{
+	document.getElementById("test").innerHTML += "dose NOT supports localStorage<br>-------------<br>";
+	
+}
+</script>
+
+
+</body>
+</html>
