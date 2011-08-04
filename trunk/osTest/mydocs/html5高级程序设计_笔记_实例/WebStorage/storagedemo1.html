@@ -2,61 +2,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>storage demo1</title>
+<title>storage demo</title>
 </head>
 
 <body>
-<h2>WebStorage demo1: sessionStorage</h2>
 
+<h2>WebStorage demo</h2>
+存:
 <input type="text" id="setInput" />
-<input type="button" id="setBtn" value="set" /><br><br>
-<input type="button" id="getBtn" value="get" />
+<input type="button" id="sessionSetBtn" value="session set" />
+<input type="button" id="localSetBtn" value="local set" />
+<br><br>
+取:
+<input type="button" id="sessionGetBtn" value="session get" />
+<input type="button" id="localGetBtn" value="local get" />
+<br><br>
+删:
+<input type="button" id="delBtn" value="del" />
+<input type="button" id="clearBtn" value="clear" />
 
 <br><br><br><br>
-
 <b>console:</b><button id="clear" >clear console</button>
 <div id="console"/>
 
 <script src="js.js"></script>
-<script>
-// http://test1.myyule.com.cn:8089/template/yf/test/WebStorage/storagedemo1.html
-var keyName = "setInputKey";
-var input;
-
-function init()
-{
-	document.getElementById("getBtn").onclick = getBtnHandler;
-	document.getElementById("setBtn").onclick = setBtnHandler;
-	document.getElementById("clear").onclick = clear;
-	input = document.getElementById("setInput");
-}
-
-function getBtnHandler()
-{
-	test(window.sessionStorage.getItem(keyName));
-	//test(window.sessionStorage.keyName);//ff chromium各种失败
-}
-function setBtnHandler()
-{
-	window.sessionStorage.setItem(keyName, input.value);
-	//window.sessionStorage.keyName = input.value;
-}
-
-function loadDemo()
-{
-	if (window.sessionStorage && window.localStorage)
-	{
-		init();
-	}
-	else
-	{
-		alert("换个浏览器吧~ ff opera safari chrome都行~~");
-	}
-}
-
-window.addEventListener("load", loadDemo, true);
-</script>
-
 
 </body>
 </html>
