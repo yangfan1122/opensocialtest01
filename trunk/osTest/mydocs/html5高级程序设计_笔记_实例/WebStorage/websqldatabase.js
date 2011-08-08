@@ -24,60 +24,76 @@ var arr = [];
 var insert;
 var db = openDatabase('db', '1.0', 'my first database', 2 * 1024 * 1024);
 
-function showDatabase()
+/**
+ *	写入数据
+ */
+function showDatabaseINSERT()
 {
 	db.transaction(function(tx)
 		{
-			tx.executeSql('CREATE TABLE IF NOT EXISTS racers (id integer primary key autoincrement, name)');
-
+			tx.executeSql('CREATE TABLE IF NOT EXISTS racers (id integer primary key autoincrement, data)');
+			/*
 			for (var i = 0; i < arr.length; i++)
 			{
-				tx.executeSql('INSERT INTO racers (name) VALUES (?)', [arr[i]]);
+				tx.executeSql('INSERT INTO racers (data) VALUES (?)', [arr[i]]);
 			}
-
-			doQuery();
+			*/
+			tx.executeSql('INSERT INTO racers (data) VALUES (?)', [insert.value]);
+			
+			//doQuery();
 		});
 }
+
+/**
+ *	读
+ */
 function doQuery()
 {
 	db.transaction(function(tx)
 		{
 			tx.executeSql('SELECT * from racers', [], function(tx, result)
 				{
-					// log SQL result set
 					for (var i = 0; i < result.rows.length; i++)
 					{
 						var item = result.rows.item(i);
-						test(item.id+":"+item.name);
+						test(item.id+":"+item.data);
 					}
 				});
+		});
+}
+
+/**
+ *	清空
+ */
+function clearDB()
+{
+	db.transaction(function(tx)
+		{
+			tx.executeSql('SELECT * from racers', [], function(tx, result)
+				{
+					for (var i = 0; i < result.rows.length; i++)
+					{
+						var item = result.rows.item(i);
+						tx.executeSql('DELETE FROM racers');
+					}
+				});
+
 		});
 }
 
 function insertHandler()
 {
 	arr.push(insert.value);
-	test(arr);
+	showDatabaseINSERT();
 }
 function clearArrHandler()
 {
+	clearDB();
 	arr=[];
-	test(arr);
 }
 function showHandler()
 {
-	/*
-	if(arr.length>0)
-	{
-		showDatabase();
-	}
-	else
-	{
-		alert("木有数据！");
-	}
-	*/
-	
-	showDatabase();
+	doQuery();
 }
 
 function loadDemo()
