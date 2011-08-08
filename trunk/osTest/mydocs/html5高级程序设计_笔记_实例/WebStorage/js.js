@@ -44,13 +44,17 @@ function init()
 	document.getElementById("clear").onclick = clear;
 	input = document.getElementById("setInput");
 
-	//更新storage后的通信
-	window.addEventListener("storage", displayStorageEvent, true);//？触发不到
+	//在其他窗口标签更新storage的监听
+	window.addEventListener("storage", displayStorageEvent, true);
 }
 
 function displayStorageEvent(e)
 {
-	var str = "key:"+e.key+", newValue:"+e.newValue+", oldValue:"+oldValue+", url:"+e.url+", storageArea:"+e.storageArea;
+	/**
+	 *	url：属性指向Storage时间发生的源。修改动作来自此url。
+	 *	storageArea：属性是一个引用，它指向值发生改变的localStorage或sessionStorage。
+	 */
+	var str = "key:"+e.key+", newValue:"+e.newValue+", oldValue:"+e.oldValue+", url:"+e.url+", storageArea:"+e.storageArea;
 	test("更新 - "+str);
 }
 
