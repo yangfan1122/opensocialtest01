@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>orientation</title>
+</head>
+<body onorientationchange="rotateDisplay()">
+
+<input type="button" id="clear" value="clear console" /><br>
+<div id="console"></div>
+
+<script src="js.js"></script>
+<script>
+//http://test1.myyule.com.cn:8089/template/yf/test/Touchscreen/orientation.html
+
+/**
+ *	180°的垂直翻转未试出来，设备原因？
+ *	
+ */
+
+function rotateDisplay()
+{
+	switch(window.orientation)
+	{
+		case 0:
+			test("原始方向");
+			break;
+		case -90:
+			test("右");
+			break;
+		case 180:
+			test("垂直翻转");
+			break;
+		case 90:
+			test("左");
+			break;	
+	}
+}
+
+</script>
+
+</body>
+</html>
