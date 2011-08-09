@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html manifest="application.manifest">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>check applicationCache</title>
+</head>
+
+<body>
+
+<script>
+//http://test1.myyule.com.cn:8089/template/yf/test/offline/checkapplicationCache.html
+
+if(window.applicationCache)
+{
+	alert("support applicationCache");	
+}
+else
+{
+	alert("dose not support applicationCache");
+}
+
+
+if(navigator.onLine)
+{
+	alert("Online");	
+}
+else
+{
+	alert("Offline");	
+}
+
+</script>
+
+</body>
+</html>
