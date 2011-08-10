@@ -5,16 +5,21 @@
 <title>gesture</title>
 </head>
 
-<body>
-
-<div style="width:300px; height:300px; background-color:#FF6600;" id="box"></div><br>
-
-<input type="button" id="clear" value="clear console" /><br>
+<body id="stage">
+<div style="width:300px; height:300px; background-color:#FF6600;" id="box">gesture</div>
+<br>
+<input type="button" id="clear" value="clear console" />
+<br>
 <div id="console"></div>
-
-<script src="js.js"></script>
+<script src="js.js"></script> 
 <script>
 //http://test1.myyule.com.cn:8089/template/yf/test/Touchscreen/gesture.html
+
+/**
+ *	手势事件
+ *	监听不到。。。
+ */
+
 function gestureChange(event)
 {
 	var scale = event.scale;
@@ -22,16 +27,19 @@ function gestureChange(event)
 	var rotation = event.ratation;
 	test(rotation);
 }
+
 try
 {
-	var b = document.getElementById("box");
-	b.addEventListener("gesturechange", gestureChange, false);
+	var node = document.getElementById("stage");
+
+	node.addEventListener("gesturechange", gestureChange, false);
+	node.addEventListener("gesturestart", gestureChange, false);
+	node.addEventListener("gestureend", gestureChange, false);
 }
 catch (e)
 {
-	alert(e);
+	test(e);
 }
-
 </script>
 </body>
 </html>
