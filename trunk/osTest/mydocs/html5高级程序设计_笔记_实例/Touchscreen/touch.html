@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>touch</title>
+</head>
+
+<body id="stage">
+<div style="width:300px; height:300px; background-color:#FF6600;" id="box">touch</div>
+<br>
+<input type="button" id="clear" value="clear console" />
+<br>
+<div id="console"></div>
+<script src="js.js"></script> 
+<script>
+//http://test1.myyule.com.cn:8089/template/yf/test/Touchscreen/touch.html
+
+/**
+ *	触摸事件
+ *	
+ */
+
+function touchMove(event)
+{
+	event.preventDefault();
+	
+	var touches = event.touches;
+	var changedTouches = event.changedTouches;
+	var targetTouches = event.targetTouches;
+	
+	var firstTouch = touches[0];
+	var firstTouchX = firstTouch.pageX;
+	var firstTouchY = firstTouch.pageY;
+	
+	//只能监听到touchstart和touchmove
+	//test(event.type);
+	
+	if(event.type == "touchstart")
+	{
+		//test("start: "+firstTouchX+","+firstTouchY);
+	}
+	if(event.type == "touchmove")
+	{
+		//touchmove事件，touches.length为1
+		test("touchmove: "+touches[touches.length-1].pageX+","+touches[touches.length-1].pageY);//触发移动事件时，经过的点
+	}
+	
+	/*
+	for(var i in changedTouches[0])
+	{
+		test(i+" : "+changedTouches[0][i]);
+	}
+	*/
+}
+
+try
+{
+	var node = document.getElementById("stage");
+
+	node.addEventListener("touchmove", touchMove, false);
+	node.addEventListener("touchstart", touchMove, false);
+	node.addEventListener("touchend", touchMove, false);
+	node.addEventListener("touchcancel", touchMove, false);
+}
+catch (e)
+{
+	test(e);
+}
+</script>
+</body>
+</html>
