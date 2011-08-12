@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>check canvas</title>
+</head>
+
+<body>
+<script>
+try
+{
+	document.createElement("canvas").getContext("2d");
+	alert("support canvas");
+}
+catch(e)
+{
+	alert("dose not support canvas");
+}
+</script>
+</body>
+</html>
