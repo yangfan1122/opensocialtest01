@@ -1,1 +1,0 @@
-http://vacations.ctrip.com/booking/PkgDetailFreeTravel--pkg--54408---startcity--1---specialDiscountID--0.html
