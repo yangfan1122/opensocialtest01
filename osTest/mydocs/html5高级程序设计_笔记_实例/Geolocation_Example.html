@@ -39,6 +39,9 @@ function initialize()
  */
 function updateLocation(position)
 {
+	//alert("纬度："+position.coords.latitude+" , 经度："+position.coords.longitude);
+	//纬度：39.904214 , 经度：116.407413
+	
 	initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
 	map.setCenter(initialLocation);
 	infowindow.setContent("Location found.");
@@ -52,11 +55,13 @@ function handleNoGeolocation(errorFlag)
 {
 	if (errorFlag == true)
 	{
+		//经纬度获取失败
 		initialLocation = newyork;
 		errorContentString = "Error: The Geolocation service failed.";
 	}
 	else
 	{
+		//浏览器不支持geolocation
 		initialLocation = siberia;
 		errorContentString = "Error: Your browser doesn't support geolocation.";
 	}
