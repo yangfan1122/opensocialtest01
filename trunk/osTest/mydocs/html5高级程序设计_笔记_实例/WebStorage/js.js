@@ -102,7 +102,7 @@ function loadDemo()
 	}
 	else
 	{
-		alert("换个浏览器吧~ ff opera safari chrome都行~~");
+		alert("浏览器不支持WebStorage");
 	}
 }
 
