@@ -25,7 +25,11 @@ function initialize()
 		browserSupportFlag = true;
 
 		//定位你的地址原理都是一样的：先寻找你的WiFi接入点和你周围的WiFi接入点来确定位置，如果你周围没有WiFi而且你的电脑也是通过有线线路连接互联网的，那么就是通过IP确定位置了，这样可能就不如WiFi定位来的准。
-		navigator.geolocation.getCurrentPosition(updateLocation, function(error){handleNoGeolocation(browserSupportFlag); alert("error "+error.code+": "+error.message);});
+
+		/*
+			错误代码 error.code ：1是用户拒绝共享位置；2是获取不到位置；3是超时错误；0表示不属于前3种情况的错误
+		*/
+		navigator.geolocation.getCurrentPosition(updateLocation, function(error){handleNoGeolocation(browserSupportFlag); alert("error "+error.code+": "+error.message);}, {enableHighAccuracy:false});
 	}
 	else
 	{
